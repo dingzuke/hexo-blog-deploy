@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ding Zuke&#39;s blog</title>
+  
+  <subtitle>个人博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.ding51.cn/"/>
+  <updated>2020-05-22T09:00:23.405Z</updated>
+  <id>https://www.ding51.cn/</id>
+  
+  <author>
+    <name>丁祖科</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js事件流</title>
+    <link href="https://www.ding51.cn/js-shi-jian-liu.html"/>
+    <id>https://www.ding51.cn/js-shi-jian-liu.html</id>
+    <published>2019-12-31T08:26:13.000Z</published>
+    <updated>2020-05-22T09:00:23.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;js事件流&quot;&gt;&lt;a href=&quot;#js事件流&quot; class=&quot;headerlink&quot; title=&quot;js事件流&quot;&gt;&lt;/a&gt;js事件流&lt;/h3&gt;&lt;h6
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>节流和防抖</title>
+    <link href="https://www.ding51.cn/jie-liu-he-fang-dou.html"/>
+    <id>https://www.ding51.cn/jie-liu-he-fang-dou.html</id>
+    <published>2019-12-18T07:51:00.000Z</published>
+    <updated>2020-05-22T09:00:23.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;函数防抖-debounce&quot;&gt;&lt;a href=&quot;#函数防抖-debounce&quot; class=&quot;headerlink&quot; title=&quot;函数防抖(debounce)&quot;&gt;&lt;/a&gt;函数防抖(debounce)&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;含义:&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="js" scheme="https://www.ding51.cn/categories/js/"/>
+    
+    
+      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
+    
+      <category term="防抖" scheme="https://www.ding51.cn/tags/%E9%98%B2%E6%8A%96/"/>
+    
+      <category term="节流" scheme="https://www.ding51.cn/tags/%E8%8A%82%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小程序web-view中使用JSSDK,ios安卓踩坑</title>
+    <link href="https://www.ding51.cn/web-view-react-zhong-jssdk.html"/>
+    <id>https://www.ding51.cn/web-view-react-zhong-jssdk.html</id>
+    <published>2019-12-17T10:41:00.000Z</published>
+    <updated>2020-05-22T09:00:23.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;背景-在小程序中使用web-view使用react-需要调用相关JSSDK的接口配置-IOS能正常使用-安卓却签名错误invalid-signature&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://www.ding51.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="JSSDK" scheme="https://www.ding51.cn/tags/JSSDK/"/>
+    
+      <category term="小程序" scheme="https://www.ding51.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git常用的指令</title>
+    <link href="https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html"/>
+    <id>https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html</id>
+    <published>2019-03-27T18:44:00.000Z</published>
+    <updated>2020-05-22T09:00:23.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;开发时常用的指令&quot;&gt;&lt;a href=&quot;#开发时常用的指令&quot; class=&quot;headerlink&quot; title=&quot;开发时常用的指令&quot;&gt;&lt;/a&gt;开发时常用的指令&lt;/h4&gt;&lt;h6 id=&quot;1-github配置-ssh-key配置&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="git" scheme="https://www.ding51.cn/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://www.ding51.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对数组中的某对象排序</title>
+    <link href="https://www.ding51.cn/shu-zu-zhong-de-mou-dui-xiang-pai-xu.html"/>
+    <id>https://www.ding51.cn/shu-zu-zhong-de-mou-dui-xiang-pai-xu.html</id>
+    <published>2019-03-25T15:45:00.000Z</published>
+    <updated>2020-05-22T09:00:23.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;利用sort方法排序&quot;&gt;&lt;a href=&quot;#利用sort方法排序&quot; class=&quot;headerlink&quot; title=&quot;利用sort方法排序&quot;&gt;&lt;/a&gt;利用sort方法排序&lt;/h6&gt;&lt;p&gt;例子: 对一组数组中的年龄排序.&lt;/p&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="js" scheme="https://www.ding51.cn/categories/js/"/>
+    
+    
+      <category term="排序" scheme="https://www.ding51.cn/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>node版本升级管理</title>
+    <link href="https://www.ding51.cn/ode-ban-ben-sheng-ji-guan-li.html"/>
+    <id>https://www.ding51.cn/ode-ban-ben-sheng-ji-guan-li.html</id>
+    <published>2019-03-24T14:38:00.000Z</published>
+    <updated>2020-05-22T09:00:23.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;升级或降级node-网上找了一大堆的资料-看着头皮发麻-只需两行代码的事情&quot;&gt;&lt;a href=&quot;#升级或降级node-网上找了一大堆的资料-看着头皮发麻-只需两行代码的事情&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="node" scheme="https://www.ding51.cn/categories/node/"/>
+    
+    
+      <category term="node" scheme="https://www.ding51.cn/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何创建发布NPM包?</title>
+    <link href="https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html"/>
+    <id>https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html</id>
+    <published>2019-01-29T23:59:00.000Z</published>
+    <updated>2020-05-22T09:00:23.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;前言-平时我们都是使用的别人写好的npm包-npm-i-xxx-就直接安装好了使用-本文章介绍的是如何创建自己的封装好的npm包发布。&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="npm" scheme="https://www.ding51.cn/categories/npm/"/>
+    
+    
+      <category term="创建npm包" scheme="https://www.ding51.cn/tags/%E5%88%9B%E5%BB%BAnpm%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS如何优雅的写判断语句(二)</title>
+    <link href="https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju-er.html"/>
+    <id>https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju-er.html</id>
+    <published>2019-01-20T20:01:00.000Z</published>
+    <updated>2020-05-22T09:00:23.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;1.多重判断时使用 Array.includes&lt;br&gt;2.更少的嵌套，尽早 return&lt;br&gt;3.使用默认参数和解构&lt;br&gt;4.倾向于遍历对象而不是 Switch 语句&lt;br&gt;5.对 所有/部分 判断使用 Array.every &amp;amp;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS如何优雅的写判断语句(一)</title>
+    <link href="https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html"/>
+    <id>https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html</id>
+    <published>2019-01-20T17:25:00.000Z</published>
+    <updated>2020-05-22T09:00:23.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一-复杂判断优雅写法&quot;&gt;&lt;a href=&quot;#一-复杂判断优雅写法&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>input只能输入数字并限制长度</title>
+    <link href="https://www.ding51.cn/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html"/>
+    <id>https://www.ding51.cn/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html</id>
+    <published>2018-12-26T14:01:00.000Z</published>
+    <updated>2020-05-22T09:00:23.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;随笔记录&quot;&gt;&lt;a href=&quot;#随笔记录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="html5" scheme="https://www.ding51.cn/categories/html5/"/>
+    
+    
+      <category term="htm5" scheme="https://www.ding51.cn/tags/htm5/"/>
+    
+      <category term="css" scheme="https://www.ding51.cn/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React生命周期(v16.3 之前版本)</title>
+    <link href="https://www.ding51.cn/react-xin-jiu-sheng-ming-zhou-qi-dui-bi-v16-3.html"/>
+    <id>https://www.ding51.cn/react-xin-jiu-sheng-ming-zhou-qi-dui-bi-v16-3.html</id>
+    <published>2018-12-09T21:14:00.000Z</published>
+    <updated>2020-05-22T09:00:23.405Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;生命周期对react非常重要,对很多新手来说,搞不懂哪个阶段该做什么事情,迷茫,乱用函数,导致性能下降,死循环.&lt;br&gt;  文章主要记录了react平时常用的生命周期函数,及平时开发遇到的注意事项,自从react v16.3更新后,其生命周期还是发生很大的改变,
+        
+      
+    
+    </summary>
+    
+      <category term="react" scheme="https://www.ding51.cn/categories/react/"/>
+    
+    
+      <category term="react生命周期" scheme="https://www.ding51.cn/tags/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6中箭头函数和function的区别</title>
+    <link href="https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html"/>
+    <id>https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html</id>
+    <published>2018-11-27T13:45:00.000Z</published>
+    <updated>2020-05-22T09:00:23.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;箭头函数和function的区别总结&quot;&gt;&lt;a href=&quot;#箭头函数和function的区别总结&quot; class=&quot;headerlink&quot; title=&quot;箭头函数和function的区别总结&quot;&gt;&lt;/a&gt;箭头函数和function的区别总结&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="https://www.ding51.cn/categories/ES6/"/>
+    
+    
+      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
+    
+      <category term="箭头函数this" scheme="https://www.ding51.cn/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this/"/>
+    
+      <category term="ES6" scheme="https://www.ding51.cn/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx 搭建和配置</title>
+    <link href="https://www.ding51.cn/nginx-da-jian-he-pei-zhi.html"/>
+    <id>https://www.ding51.cn/nginx-da-jian-he-pei-zhi.html</id>
+    <published>2018-11-21T02:01:00.000Z</published>
+    <updated>2020-05-22T09:00:23.404Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在&lt;a href=&quot;https://www.bwh8.net&quot; target=&quot;_blank&quot;&gt;搬瓦工&lt;/a&gt;租的,不多废话直接上干货&lt;/p&gt;
+&lt;h6 id=&quot;环境：&quot;&gt;&lt;a href=&quot;#环境：&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://www.ding51.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Nginx " scheme="https://www.ding51.cn/tags/Nginx/"/>
+    
+  </entry>
+  
+</feed>
