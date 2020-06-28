@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-06-12T07:00:24.722Z</updated>
+  <updated>2020-06-28T07:57:45.235Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu设置chrome和firefox开机全屏自启</title>
+    <link href="https://www.ding51.cn/ubuntu-she-zhi-chrome-he-firefox-kai-ji-quan-ping-zi-qi.html"/>
+    <id>https://www.ding51.cn/ubuntu-she-zhi-chrome-he-firefox-kai-ji-quan-ping-zi-qi.html</id>
+    <published>2020-06-19T07:36:00.000Z</published>
+    <updated>2020-06-28T07:57:45.235Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一-设置开机自启浏览器&quot;&gt;&lt;a href=&quot;#一-设置开机自启浏览器&quot; class=&quot;headerlink&quot; title=&quot;一. 设置开机自启浏览器&quot;&gt;&lt;/a&gt;一. 设置开机自启浏览器&lt;/h3&gt;&lt;h5 id=&quot;注：-此设置基于ubuntu系统&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="ubuntu浏览器自启设置" scheme="https://www.ding51.cn/categories/ubuntu%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%90%AF%E8%AE%BE%E7%BD%AE/"/>
+    
+    
+      <category term="ubuntu " scheme="https://www.ding51.cn/tags/ubuntu/"/>
+    
+      <category term="浏览器自启全屏" scheme="https://www.ding51.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%90%AF%E5%85%A8%E5%B1%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>js事件流</title>
