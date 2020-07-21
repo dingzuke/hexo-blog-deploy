@@ -12,6 +12,16 @@
       
       
       
+        <tags>
+            
+            <tag> 柯里化 </tag>
+            
+            <tag> 偏函数 </tag>
+            
+            <tag> 反柯里化 </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -242,9 +252,9 @@
       
         <tags>
             
-            <tag> js优化 </tag>
-            
             <tag> map对象 </tag>
+            
+            <tag> js优化 </tag>
             
         </tags>
       

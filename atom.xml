@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-07-21T05:58:29.913Z</updated>
+  <updated>2020-07-21T06:03:44.854Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>柯里化-偏函数-反柯里化</title>
     <link href="https://www.ding51.cn/ke-li-hua-pian-han-shu-fan-ke-li-hua.html"/>
     <id>https://www.ding51.cn/ke-li-hua-pian-han-shu-fan-ke-li-hua.html</id>
-    <published>2020-07-21T05:56:06.000Z</published>
-    <updated>2020-07-21T05:58:29.913Z</updated>
+    <published>2020-07-21T05:56:00.000Z</published>
+    <updated>2020-07-21T06:03:44.854Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+    
+      <category term="柯里化" scheme="https://www.ding51.cn/tags/%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
+    
+      <category term="偏函数" scheme="https://www.ding51.cn/tags/%E5%81%8F%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="反柯里化" scheme="https://www.ding51.cn/tags/%E5%8F%8D%E6%9F%AF%E9%87%8C%E5%8C%96/"/>
     
   </entry>
   
@@ -295,9 +301,9 @@
     </summary>
     
     
-      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
-    
       <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
