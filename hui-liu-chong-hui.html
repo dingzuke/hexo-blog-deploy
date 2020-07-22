@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="http缓存, Ding Zuke&#39;s blog">
-    <meta name="description" content="一、3种强缓存描述： 不需要发送请求到服务端，直接读取浏览器本地缓存
-1. Expires（最低优先级）Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进">
+    <meta name="keywords" content="回流 重绘, Ding Zuke&#39;s blog">
+    <meta name="description" content="一、概念
+dom-tree: 浏览器把获取到的HTML代码解析成1个DOM树，DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。
+
+样式结构体: 浏览器把所有样式(用户定义的CSS和用户代理)解">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>http缓存 | Ding Zuke&#39;s blog</title>
+    <title>回流 重绘 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -259,7 +261,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        http缓存
+                        回流 重绘
                     </div>
                 </div>
             </div>
@@ -277,24 +279,7 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/http缓存/" target="_blank">
-                    <span class="chip bg-color">http缓存</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
-                
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/http/" class="post-category" target="_blank">
-                        http
-                    </a>
-                    
-                </span>
                 
 
                 <span class="post-date">
@@ -305,19 +290,77 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、3种强缓存"><a href="#一、3种强缓存" class="headerlink" title="一、3种强缓存"></a>一、3种强缓存</h3><p><strong>描述：</strong> 不需要发送请求到服务端，直接读取浏览器本地缓存</p>
-<h6 id="1-Expires（最低优先级）"><a href="#1-Expires（最低优先级）" class="headerlink" title="1. Expires（最低优先级）"></a>1. Expires（最低优先级）</h6><p>Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进行比较，如果系统时间超过了 Expires 的值，缓存失效。由于和系统时间进行比较，所以当系统时间和服务器时间不一致的时候，会有缓存有效期不准的问题。</p>
-<p>Expires 的优先级在三个 Header 属性中是最低的。</p>
-<h6 id="2-Cache-Control（中）"><a href="#2-Cache-Control（中）" class="headerlink" title="2. Cache-Control（中）"></a>2. Cache-Control（中）</h6><p>max-age：单位是秒，缓存时间计算的方式是距离发起的时间的秒数，超过间隔的秒数缓存失效</p>
-<p>no-cache：不使用强缓存，需要与服务器验证缓存是否新鲜</p>
-<p>no-store：禁止使用缓存（包括协商缓存），每次都向服务器请求最新的资源</p>
-<p>private：专用于个人的缓存，中间代理、CDN 等不能缓存此响应</p>
-<p>public：响应可以被中间代理、CDN 等缓存</p>
-<p>must-revalidate：在缓存过期前可以使用，过期后必须向服务器验证</p>
-<h6 id="3-Pragma（最高）"><a href="#3-Pragma（最高）" class="headerlink" title="3. Pragma（最高）"></a>3. Pragma（最高）</h6><p>Pragma 只有一个属性值，就是 no-cache ，效果和 Cache-Control 中的 no-cache 一致</p>
-<h3 id="二、协商缓存"><a href="#二、协商缓存" class="headerlink" title="二、协商缓存"></a>二、协商缓存</h3><p>当浏览器的强缓存无效，并且在<strong>请求头中设置</strong>了<strong>If-Modified-Since</strong> 或者 <strong>If-None-Match </strong>的时候，会将这两个属性值到服务端去验证是否命中协商缓存，如果命中了协商缓存，会返回 <strong>304 状态</strong>，加载浏览器缓存，并且<strong>响应头</strong>会设置 <strong>Last-Modified</strong> 或者<strong> ETag </strong>属性。</p>
-<h6 id="1-ETag（返回头）-If-None-Match（请求头设置）"><a href="#1-ETag（返回头）-If-None-Match（请求头设置）" class="headerlink" title="1. ETag（返回头）     If-None-Match（请求头设置）"></a>1. ETag（返回头）     If-None-Match（请求头设置）</h6><p>ETag/If-None-Match 的值是一串 hash 码，代表的是一个资源的标识符，当服务端的文件变化的时候，它的 hash码会随之改变，通过请求头中的 If-None-Match 和当前文件的 hash 值进行比较，如果相等则表示命中协商缓存。ETag 又有强弱校验之分，如果 hash 码是以 “W/“ 开头的一串字符串，说明此时协商缓存的校验是弱校验的，只有服务器上的文件差异（根据 ETag 计算方式来决定）达到能够触发 hash 值后缀变化的时候，才会真正地请求资源，否则返回 304 并加载浏览器缓存。</p>
-<h6 id="2-Last-Modified（返回头）-If-Modified-Since（请求头设置）"><a href="#2-Last-Modified（返回头）-If-Modified-Since（请求头设置）" class="headerlink" title="2.  Last-Modified（返回头） If-Modified-Since（请求头设置）"></a>2.  Last-Modified（返回头） If-Modified-Since（请求头设置）</h6><p> Last-Modified/If-Modified-Since 的值代表的是文件的最后修改时间，第一次请求服务端会把资源的最后修改时间放到 Last-Modified 响应头中，第二次发起请求的时候，请求头会带上上一次响应头中的 Last-Modified 的时间，并放到 If-Modified-Since 请求头属性中，服务端根据文件最后一次修改时间和 If-Modified-Since 的值进行比较，如果相等，返回 304 ，并加载浏览器缓存。</p>
+                <h4 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h4><ul>
+<li><p><strong>dom-tree:</strong> 浏览器把获取到的HTML代码解析成1个DOM树，DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。</p>
+</li>
+<li><p><strong>样式结构体:</strong> 浏览器把所有样式(用户定义的CSS和用户代理)解析。</p>
+</li>
+<li><p><strong>render tree（渲染树）:</strong>  <strong>dom-tree</strong> + <strong>样式结构体</strong>, render tree中每个NODE都有自己的style，而且render tree不包含隐藏的节点(比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。</p>
+</li>
+<li><p><strong>回流：</strong>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候，这时候是一定会发生回流的</p>
+<p>例子：</p>
+<ol>
+<li>添加或者删除可见的DOM元素；</li>
+<li>元素尺寸改变——边距、填充、边框、宽度和高度</li>
+<li>内容变化，比如用户在input框中输入文字</li>
+<li>浏览器窗口尺寸改变——resize事件发生时</li>
+<li>计算 offsetWidth 和 offsetHeight 属性</li>
+<li>设置 style 属性的值</li>
+</ol>
+</li>
+<li><p><strong>重绘：</strong>render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如字体color。则就叫称为重绘。</p>
+</li>
+</ul>
+<h4 id="二、回流重绘区别："><a href="#二、回流重绘区别：" class="headerlink" title="二、回流重绘区别："></a>二、回流重绘区别：</h4><ul>
+<li>至少会发生一次回流。</li>
+<li>回流必将引起重绘，而重绘不一定会引起回流。</li>
+</ul>
+<h4 id="三、优化"><a href="#三、优化" class="headerlink" title="三、优化"></a>三、优化</h4><p>可以发现回流的成本要比重绘的成本高，与构建的render-tree 节点有关系。</p>
+<ul>
+<li><h6 id="浏览器优化"><a href="#浏览器优化" class="headerlink" title="浏览器优化"></a>浏览器优化</h6><p>浏览器自建一个队列，当回流和重绘达到一定数量或时间时，浏览器再更新。</p>
+</li>
+<li><h6 id="代码层优化"><a href="#代码层优化" class="headerlink" title="代码层优化"></a>代码层优化</h6><h6 id="1-添加dom节点时，创建个模板，一次添加完，不要一个个单独添加。"><a href="#1-添加dom节点时，创建个模板，一次添加完，不要一个个单独添加。" class="headerlink" title="1. 添加dom节点时，创建个模板，一次添加完，不要一个个单独添加。"></a>1. 添加dom节点时，创建个模板，一次添加完，不要一个个单独添加。</h6><h6 id="2-分离读写"><a href="#2-分离读写" class="headerlink" title="2.分离读写"></a>2.分离读写</h6><p>  样式集中修改（浏览器优化机制），集中读取offsetWidth等属性（如果浏览器队列中回流等，每次读取这些属性都会引起回流），建议通过改变class或者csstext属性集中改变样式。</p>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 会引起四次 回流</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token string">'10px'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetLeft<span class="token punctuation">)</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token string">'10px'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetTop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">'20px'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'20px'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 一次回流(前面4个样式的设置，浏览器会优化一次渲染)</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token string">'10px'</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> <span class="token string">'10px'</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> <span class="token string">'20px'</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token string">'20px'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetLeft<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetTop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>div<span class="token punctuation">.</span>offsetHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 推荐使用 class 和 cssText 改变</span>
+el<span class="token punctuation">.</span>className <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">" theclassname"</span><span class="token punctuation">;</span>
+el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">"; left: "</span> <span class="token operator">+</span> left <span class="token operator">+</span> <span class="token string">"px; top: "</span> <span class="token operator">+</span> top <span class="token operator">+</span> <span class="token string">"px;"</span><span class="token punctuation">;</span>
+
+</code></pre>
+<h6 id="3-缓存布局信息"><a href="#3-缓存布局信息" class="headerlink" title="3.缓存布局信息"></a>3.缓存布局信息</h6><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// bad 强制刷新 触发两次重排</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> div<span class="token punctuation">.</span>offsetLeft <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> div<span class="token punctuation">.</span>offsetTop <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// good 缓存布局信息 相当于读写分离</span>
+<span class="token keyword">var</span> curLeft <span class="token operator">=</span> div<span class="token punctuation">.</span>offsetLeft<span class="token punctuation">;</span>
+<span class="token keyword">var</span> curTop <span class="token operator">=</span> div<span class="token punctuation">.</span>offsetTop<span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>left <span class="token operator">=</span> curLeft <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+div<span class="token punctuation">.</span>style<span class="token punctuation">.</span>top <span class="token operator">=</span> curTop <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</code></pre>
+<h6 id="4-隐藏dom-再修改样式"><a href="#4-隐藏dom-再修改样式" class="headerlink" title="4.隐藏dom,再修改样式"></a>4.隐藏dom,再修改样式</h6><pre class=" language-javascript"><code class="language-javascript">dom<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+<span class="token comment" spellcheck="true">// 修改dom样式，修改完再显示dom</span>
+dom<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -456,7 +499,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/http-huan-cun.html" class="b-link-green">http缓存</a>
+                    <a href="/hui-liu-chong-hui.html" class="b-link-green">回流 重绘</a>
                 </p>
             </div>
         </div>
@@ -478,7 +521,7 @@
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2020-07-22T11-27-00',
+        id: '2020-07-22T14-29-40',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -499,8 +542,8 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/hui-liu-chong-hui.html">
                     <div class="card-image">
@@ -517,41 +560,8 @@ dom-tree: 浏览器把获取到的HTML代码解析成1个DOM树，DOM树里包�
 
 样式结构体: 浏览器把所有样式(用户定义的CSS和用户代理)解</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            丁祖科
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/ke-li-hua-pian-han-shu-fan-ke-li-hua.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="柯里化-偏函数-反柯里化">
-                        
-                        <span class="card-title">柯里化-偏函数-反柯里化</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">1. 柯里化 描述：柯里化算是特殊的偏函数，把一个多参数函数转换成多个单参数函数，也就是说把一个具有n个参数的函数转换成n个一元函数
- 特点：  
-1、闭包，调用柯里化函数（currie）返回另外一个函数（_myFn），通过闭包缓存真正执行</div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
                             </span>
                         <span class="publish-author">
                             
@@ -561,19 +571,48 @@ dom-tree: 浏览器把获取到的HTML代码解析成1个DOM树，DOM树里包�
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/http-huan-cun.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="http缓存">
+                        
+                        <span class="card-title">http缓存</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">一、3种强缓存描述： 不需要发送请求到服务端，直接读取浏览器本地缓存
+1. Expires（最低优先级）Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/http/" class="post-category" target="_blank">
+                                    http
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/柯里化/" target="_blank">
-                        <span class="chip bg-color">柯里化</span>
-                    </a>
-                    
-                    <a href="/tags/偏函数/" target="_blank">
-                        <span class="chip bg-color">偏函数</span>
-                    </a>
-                    
-                    <a href="/tags/反柯里化/" target="_blank">
-                        <span class="chip bg-color">反柯里化</span>
+                    <a href="/tags/http缓存/" target="_blank">
+                        <span class="chip bg-color">http缓存</span>
                     </a>
                     
                 </div>
