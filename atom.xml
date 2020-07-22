@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-07-21T06:11:20.100Z</updated>
+  <updated>2020-07-22T03:30:44.805Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>http缓存</title>
+    <link href="https://www.ding51.cn/http-huan-cun.html"/>
+    <id>https://www.ding51.cn/http-huan-cun.html</id>
+    <published>2020-07-22T03:27:00.000Z</published>
+    <updated>2020-07-22T03:30:44.805Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、3种强缓存&quot;&gt;&lt;a href=&quot;#一、3种强缓存&quot; class=&quot;headerlink&quot; title=&quot;一、3种强缓存&quot;&gt;&lt;/a&gt;一、3种强缓存&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;描述：&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="http" scheme="https://www.ding51.cn/categories/http/"/>
+    
+    
+      <category term="http缓存" scheme="https://www.ding51.cn/tags/http%E7%BC%93%E5%AD%98/"/>
+    
+  </entry>
   
   <entry>
     <title>柯里化-偏函数-反柯里化</title>

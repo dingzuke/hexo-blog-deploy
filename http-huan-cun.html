@@ -5,10 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="柯里化-偏函数-反柯里化, Ding Zuke&#39;s blog">
-    <meta name="description" content="1. 柯里化 描述：柯里化算是特殊的偏函数，把一个多参数函数转换成多个单参数函数，也就是说把一个具有n个参数的函数转换成n个一元函数
- 特点：  
-1、闭包，调用柯里化函数（currie）返回另外一个函数（_myFn），通过闭包缓存真正执行">
+    <meta name="keywords" content="http缓存, Ding Zuke&#39;s blog">
+    <meta name="description" content="一、3种强缓存描述： 不需要发送请求到服务端，直接读取浏览器本地缓存
+1. Expires（最低优先级）Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>柯里化-偏函数-反柯里化 | Ding Zuke&#39;s blog</title>
+    <title>http缓存 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,7 +259,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        柯里化-偏函数-反柯里化
+                        http缓存
                     </div>
                 </div>
             </div>
@@ -280,88 +279,45 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/柯里化/" target="_blank">
-                    <span class="chip bg-color">柯里化</span>
-                </a>
-                
-                <a href="/tags/偏函数/" target="_blank">
-                    <span class="chip bg-color">偏函数</span>
-                </a>
-                
-                <a href="/tags/反柯里化/" target="_blank">
-                    <span class="chip bg-color">反柯里化</span>
+                <a href="/tags/http缓存/" target="_blank">
+                    <span class="chip bg-color">http缓存</span>
                 </a>
                 
             </div>
             
             <div class="post-info">
                 
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/http/" class="post-category" target="_blank">
+                        http
+                    </a>
+                    
+                </span>
+                
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2020-07-21
+                    <i class="fa fa-clock-o fa-fw"></i>2020-07-22
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-柯里化"><a href="#1-柯里化" class="headerlink" title="1. 柯里化"></a>1. 柯里化</h3><p> <strong>描述：</strong>柯里化算是特殊的偏函数，把一个多参数函数转换成多个单参数函数，也就是说把一个具有n个参数的函数转换成n个一元函数</p>
-<p><strong> 特点： </strong> </p>
-<p>1、闭包，调用柯里化函数（currie）返回另外一个函数（_myFn），通过闭包缓存真正执行运算的函数（fn）和参数（args）</p>
-<p>2、 通过返回的函数传递参数，并进行判断，如果参数已经传递够了，就执行函数（fn)并返回结果，如果参数还没传递完，则继续返回函数（_myFn）接收参数</p>
-<p><strong>例子：</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 正常写法</span>
-<span class="token keyword">const</span> add <span class="token operator">=</span> <span class="token punctuation">(</span>a <span class="token operator">+</span> b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> a<span class="token operator">+</span>b
-<span class="token keyword">const</span> resAdd <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// 柯里化</span>
-<span class="token keyword">const</span> add <span class="token operator">=</span> a <span class="token operator">=</span><span class="token operator">></span> b <span class="token operator">=</span><span class="token operator">></span> a<span class="token operator">+</span>b<span class="token punctuation">;</span>
-<span class="token keyword">const</span> resCurrie <span class="token operator">=</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
-</code></pre>
-<h3 id="2-偏函数"><a href="#2-偏函数" class="headerlink" title="2. 偏函数"></a>2. 偏函数</h3><p><strong>描述： </strong>偏函数又叫局部应用，固定函数的一个或多个参数  </p>
-<p><strong>特点：</strong>偏函数的代码比较简单，就是利用闭包缓存实际的执行方法（fn）和与之的参数（preset），然后返回一个接收剩余参数的方法，方法的实现就是执行fn并返回结果</p>
-<p><strong>举例：</strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 一般写法 </span>
-<span class="token comment" spellcheck="true">// 封装一个ajax方法</span>
-<span class="token keyword">function</span> ajax <span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> callback<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token operator">...</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 调用ajax方法，</span>
-<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://xxx.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token string">'aa'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 A })</span>
-<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://xxx.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> b<span class="token punctuation">:</span> <span class="token string">'bb'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 B })</span>
-<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token string">'http://xxx.com'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> y<span class="token punctuation">:</span> <span class="token string">'yy'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 Y })</span>
-<span class="token comment" spellcheck="true">// 上面url参数重复填写</span>
-<span class="token comment" spellcheck="true">// 偏函数</span>
-<span class="token keyword">function</span> partial <span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>data<span class="token punctuation">,</span> cb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">ajax</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token punctuation">,</span> cb<span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 调用偏函数</span>
-<span class="token keyword">const</span> partialAjax <span class="token operator">=</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'http://lyn.com'</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// 发送ajax请求</span>
-<span class="token function">partialAjax</span><span class="token punctuation">(</span><span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token string">'aa'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 A })</span>
-<span class="token function">partialAjax</span><span class="token punctuation">(</span><span class="token punctuation">{</span> b<span class="token punctuation">:</span> <span class="token string">'bb'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 B })</span>
-<span class="token function">partialAjax</span><span class="token punctuation">(</span><span class="token punctuation">{</span> y<span class="token punctuation">:</span> <span class="token string">'yy'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 回调 Y })</span>
-</code></pre>
-<h3 id="3-反柯里化"><a href="#3-反柯里化" class="headerlink" title="3.反柯里化"></a>3.反柯里化</h3><p><strong>描述：</strong> 反柯里化作用和偏函数相反，它的本质是增强一个函数的使用范围，让一个对象可以使用不属于对象自己的方法，就像apply、call、bind（也有偏函数的作用）的作用，而事实上反柯里化就是通过apply、call方法实现的。</p>
-<p><strong>举例：</strong></p>
-<pre class=" language-javascript"><code class="language-javascript">Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>uncurrie <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// 参数obj是需要操作的对象</span>
-  <span class="token comment" spellcheck="true">// 这里的this是指obj对象需要借用的方法，比如示例中的Array.prototype.push</span>
-  <span class="token keyword">const</span> fn <span class="token operator">=</span> <span class="token keyword">this</span>
-  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token operator">...</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 难点，以下代码相当于：fn.call(obj, ...args), 没理解请看下面的 “代码解析” 部分</span>
-    <span class="token keyword">return</span> Function<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>call<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>fn<span class="token punctuation">,</span> <span class="token punctuation">[</span>obj<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">]</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 示例，导出Array.prototype.push方法给对象使用</span>
-<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token punctuation">:</span> <span class="token string">'aa'</span> <span class="token punctuation">}</span>
-<span class="token keyword">const</span> push <span class="token operator">=</span> Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>push<span class="token punctuation">.</span><span class="token function">uncurrie</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
-<span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'b'</span><span class="token punctuation">)</span>
-<span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// {0: "b", 1: "c", a: "aa", length: 2}</span>
-</code></pre>
-<p>参考：<a href="https://segmentfault.com/a/1190000022416728" target="_blank" rel="noopener">https://segmentfault.com/a/1190000022416728</a></p>
+                <h3 id="一、3种强缓存"><a href="#一、3种强缓存" class="headerlink" title="一、3种强缓存"></a>一、3种强缓存</h3><p><strong>描述：</strong> 不需要发送请求到服务端，直接读取浏览器本地缓存</p>
+<h6 id="1-Expires（最低优先级）"><a href="#1-Expires（最低优先级）" class="headerlink" title="1. Expires（最低优先级）"></a>1. Expires（最低优先级）</h6><p>Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进行比较，如果系统时间超过了 Expires 的值，缓存失效。由于和系统时间进行比较，所以当系统时间和服务器时间不一致的时候，会有缓存有效期不准的问题。</p>
+<p>Expires 的优先级在三个 Header 属性中是最低的。</p>
+<h6 id="2-Cache-Control（中）"><a href="#2-Cache-Control（中）" class="headerlink" title="2. Cache-Control（中）"></a>2. Cache-Control（中）</h6><p>max-age：单位是秒，缓存时间计算的方式是距离发起的时间的秒数，超过间隔的秒数缓存失效</p>
+<p>no-cache：不使用强缓存，需要与服务器验证缓存是否新鲜</p>
+<p>no-store：禁止使用缓存（包括协商缓存），每次都向服务器请求最新的资源</p>
+<p>private：专用于个人的缓存，中间代理、CDN 等不能缓存此响应</p>
+<p>public：响应可以被中间代理、CDN 等缓存</p>
+<p>must-revalidate：在缓存过期前可以使用，过期后必须向服务器验证</p>
+<h6 id="3-Pragma（最高）"><a href="#3-Pragma（最高）" class="headerlink" title="3. Pragma（最高）"></a>3. Pragma（最高）</h6><p>Pragma 只有一个属性值，就是 no-cache ，效果和 Cache-Control 中的 no-cache 一致</p>
+<h3 id="二、协商缓存"><a href="#二、协商缓存" class="headerlink" title="二、协商缓存"></a>二、协商缓存</h3><p>当浏览器的强缓存无效，并且在<strong>请求头中设置</strong>了<strong>If-Modified-Since</strong> 或者 <strong>If-None-Match </strong>的时候，会将这两个属性值到服务端去验证是否命中协商缓存，如果命中了协商缓存，会返回 <strong>304 状态</strong>，加载浏览器缓存，并且<strong>响应头</strong>会设置 <strong>Last-Modified</strong> 或者<strong> ETag </strong>属性。</p>
+<h6 id="1-ETag（返回头）-If-None-Match（请求头设置）"><a href="#1-ETag（返回头）-If-None-Match（请求头设置）" class="headerlink" title="1. ETag（返回头）     If-None-Match（请求头设置）"></a>1. ETag（返回头）     If-None-Match（请求头设置）</h6><p>ETag/If-None-Match 的值是一串 hash 码，代表的是一个资源的标识符，当服务端的文件变化的时候，它的 hash码会随之改变，通过请求头中的 If-None-Match 和当前文件的 hash 值进行比较，如果相等则表示命中协商缓存。ETag 又有强弱校验之分，如果 hash 码是以 “W/“ 开头的一串字符串，说明此时协商缓存的校验是弱校验的，只有服务器上的文件差异（根据 ETag 计算方式来决定）达到能够触发 hash 值后缀变化的时候，才会真正地请求资源，否则返回 304 并加载浏览器缓存。</p>
+<h6 id="2-Last-Modified（返回头）-If-Modified-Since（请求头设置）"><a href="#2-Last-Modified（返回头）-If-Modified-Since（请求头设置）" class="headerlink" title="2.  Last-Modified（返回头） If-Modified-Since（请求头设置）"></a>2.  Last-Modified（返回头） If-Modified-Since（请求头设置）</h6><p> Last-Modified/If-Modified-Since 的值代表的是文件的最后修改时间，第一次请求服务端会把资源的最后修改时间放到 Last-Modified 响应头中，第二次发起请求的时候，请求头会带上上一次响应头中的 Last-Modified 的时间，并放到 If-Modified-Since 请求头属性中，服务端根据文件最后一次修改时间和 If-Modified-Since 的值进行比较，如果相等，返回 304 ，并加载浏览器缓存。</p>
 
             </div>
             <hr/>
@@ -500,7 +456,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/ke-li-hua-pian-han-shu-fan-ke-li-hua.html" class="b-link-green">柯里化-偏函数-反柯里化</a>
+                    <a href="/http-huan-cun.html" class="b-link-green">http缓存</a>
                 </p>
             </div>
         </div>
@@ -522,7 +478,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2020-07-21T13-56-00',
+        id: '2020-07-22T11-27-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -543,8 +499,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/http-huan-cun.html">
                     <div class="card-image">
@@ -559,9 +515,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <div class="summary">一、3种强缓存描述： 不需要发送请求到服务端，直接读取浏览器本地缓存
 1. Expires（最低优先级）Expires 的值是一个 HTTP 日期，WEB服务器使用Expires头来告诉Web客户端，会根据系统时间和 Expires 的值进</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -574,6 +530,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -590,32 +547,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/ubuntu-she-zhi-chrome-he-firefox-kai-ji-quan-ping-zi-qi.html">
+                <a href="/ke-li-hua-pian-han-shu-fan-ke-li-hua.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="ubuntu设置chrome和firefox开机全屏自启">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="柯里化-偏函数-反柯里化">
                         
-                        <span class="card-title">ubuntu设置chrome和firefox开机全屏自启</span>
+                        <span class="card-title">柯里化-偏函数-反柯里化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一. 设置开机自启浏览器注： 此设置基于ubuntu系统1.新建autostar# 查看有没有autostart文件,没有新建
-$ mkdir ~/.config/autostart
-
-2.拷贝.desktop 到 autostart# 查</div>
+                    <div class="summary">1. 柯里化 描述：柯里化算是特殊的偏函数，把一个多参数函数转换成多个单参数函数，也就是说把一个具有n个参数的函数转换成n个一元函数
+ 特点：  
+1、闭包，调用柯里化函数（currie）返回另外一个函数（_myFn），通过闭包缓存真正执行</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-19
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-21
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/ubuntu浏览器自启设置/" class="post-category" target="_blank">
-                                    ubuntu浏览器自启设置
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            丁祖科
                             
                         </span>
                     </div>
@@ -623,12 +575,16 @@ $ mkdir ~/.config/autostart
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ubuntu/" target="_blank">
-                        <span class="chip bg-color">ubuntu </span>
+                    <a href="/tags/柯里化/" target="_blank">
+                        <span class="chip bg-color">柯里化</span>
                     </a>
                     
-                    <a href="/tags/浏览器自启全屏/" target="_blank">
-                        <span class="chip bg-color">浏览器自启全屏</span>
+                    <a href="/tags/偏函数/" target="_blank">
+                        <span class="chip bg-color">偏函数</span>
+                    </a>
+                    
+                    <a href="/tags/反柯里化/" target="_blank">
+                        <span class="chip bg-color">反柯里化</span>
                     </a>
                     
                 </div>
