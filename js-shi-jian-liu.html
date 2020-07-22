@@ -5,8 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="js事件流, Ding Zuke&#39;s blog">
-    <meta name="description" content="js事件流概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程">
+    <meta name="keywords" content="js事件, Ding Zuke&#39;s blog">
+    <meta name="description" content="js事件概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>js事件流 | Ding Zuke&#39;s blog</title>
+    <title>js事件 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,7 +258,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        js事件流
+                        js事件
                     </div>
                 </div>
             </div>
@@ -287,7 +287,7 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="js事件流"><a href="#js事件流" class="headerlink" title="js事件流"></a>js事件流</h3><h6 id="概念-HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等-当页面产生一个事件时-该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流"><a href="#概念-HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等-当页面产生一个事件时-该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流" class="headerlink" title="概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流"></a>概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流</h6><h5 id="一-当页面产生一个事件时经过的三个阶段"><a href="#一-当页面产生一个事件时经过的三个阶段" class="headerlink" title="一. 当页面产生一个事件时经过的三个阶段:"></a>一. 当页面产生一个事件时经过的三个阶段:</h5><ol>
+                <h3 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h3><h6 id="概念-HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等-当页面产生一个事件时-该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流"><a href="#概念-HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等-当页面产生一个事件时-该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流" class="headerlink" title="概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流"></a>概念:HTML中与javascript交互是通过事件驱动来实现的，例如鼠标点击事件、页面的滚动事件onscroll等等,当页面产生一个事件时,该事件会在元素节点与根节点之间的路径传播，路径所经过的节点都会收到该事件，这个传播的过程叫做DOM事件流</h6><h5 id="一-当页面产生一个事件时经过的三个阶段"><a href="#一-当页面产生一个事件时经过的三个阶段" class="headerlink" title="一. 当页面产生一个事件时经过的三个阶段:"></a>一. 当页面产生一个事件时经过的三个阶段:</h5><ol>
 <li>事件捕获阶段<br>document顶部先接收到事件，依次往下传播到事件节点（可以借用addEventListener来模拟事件捕获流）</li>
 <li>处于目标阶段</li>
 <li>事件冒泡阶段<br>事件开始时由最具体的元素接收，然后逐级向上传播<br>执行流程:<br><img src="/images/pasted-19.png" alt="upload successful"></li>
@@ -308,6 +308,10 @@ oBtn<span class="token punctuation">.</span>onclick <span class="token operator"
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>return false ? <a href="https://blog.csdn.net/andyzhaojianhui/article/details/45581463" target="_blank">参考文章</a></p>
+<h4 id="四、target-和-currentTarget"><a href="#四、target-和-currentTarget" class="headerlink" title="四、target 和 currentTarget"></a>四、target 和 currentTarget</h4><p>event.target指向引起触发事件的元素，而event.currentTarget则是事件绑定监听的元素。</p>
+<h4 id="五、宏任务和微任务"><a href="#五、宏任务和微任务" class="headerlink" title="五、宏任务和微任务"></a>五、宏任务和微任务</h4><p>macrotask（宏任务）：主代码块，setTimeout，setInterval等（可以看到，事件队列中的每一个事件都是一个macrotask）</p>
+<p>microtask（微任务）：Promise，process.nextTick等</p>
+<p><img src="/images/pasted-33.png" alt="upload successful"></p>
 
             </div>
             <hr/>
@@ -446,7 +450,7 @@ oBtn<span class="token punctuation">.</span>onclick <span class="token operator"
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/js-shi-jian-liu.html" class="b-link-green">js事件流</a>
+                    <a href="/js-shi-jian-liu.html" class="b-link-green">js事件</a>
                 </p>
             </div>
         </div>
