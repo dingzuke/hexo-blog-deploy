@@ -5,13 +5,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ES6中箭头函数和function的区别, Ding Zuke&#39;s blog">
-    <meta name="description" content="箭头函数和function的区别总结1.箭头函数与function定义函数的写法//function   
-function fn(a, b){
-    return a + b;
-}
-// 箭头函数
-var foo = (a, b)=&gt;{">
+    <meta name="keywords" content="&amp;&amp; || 运算, Ding Zuke&#39;s blog">
+    <meta name="description" content="1; // true 
+&#34;0&#34; // true 
+0; // false 
+false; // false 
+true; // true 
+&#34;string&#34;; // true 
+&#34;&#34; // false 
+null // false 
+NaN">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@ var foo = (a, b)=&gt;{">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ES6中箭头函数和function的区别 | Ding Zuke&#39;s blog</title>
+    <title>&amp;&amp; || 运算 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,7 +266,7 @@ var foo = (a, b)=&gt;{">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ES6中箭头函数和function的区别
+                        &amp;&amp; || 运算
                     </div>
                 </div>
             </div>
@@ -283,16 +286,12 @@ var foo = (a, b)=&gt;{">
             
             <div class="article-tag">
                 
-                <a href="/tags/js/" target="_blank">
-                    <span class="chip bg-color">js</span>
+                <a href="/tags/" target="_blank">
+                    <span class="chip bg-color">&amp;&amp;</span>
                 </a>
                 
-                <a href="/tags/箭头函数this/" target="_blank">
-                    <span class="chip bg-color">箭头函数this</span>
-                </a>
-                
-                <a href="/tags/ES6/" target="_blank">
-                    <span class="chip bg-color">ES6</span>
+                <a href="/tags/" target="_blank">
+                    <span class="chip bg-color">||</span>
                 </a>
                 
             </div>
@@ -302,77 +301,61 @@ var foo = (a, b)=&gt;{">
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/ES6/" class="post-category" target="_blank">
-                        ES6
+                    <a href="/categories/js基础/" class="post-category" target="_blank">
+                        js基础
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-27
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-26
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="箭头函数和function的区别总结"><a href="#箭头函数和function的区别总结" class="headerlink" title="箭头函数和function的区别总结"></a>箭头函数和function的区别总结</h2><h4 id="1-箭头函数与function定义函数的写法"><a href="#1-箭头函数与function定义函数的写法" class="headerlink" title="1.箭头函数与function定义函数的写法"></a>1.箭头函数与function定义函数的写法</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//function   </span>
-<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">// 箭头函数</span>
-<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <pre class=" language-javascript"><code class="language-javascript"><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">"0"</span> <span class="token comment" spellcheck="true">// true </span>
+<span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false </span>
+<span class="token boolean">false</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false </span>
+<span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">"string"</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true </span>
+<span class="token string">""</span> <span class="token comment" spellcheck="true">// false </span>
+<span class="token keyword">null</span> <span class="token comment" spellcheck="true">// false </span>
+<span class="token number">NaN</span> <span class="token comment" spellcheck="true">// false </span>
 </code></pre>
-<h4 id="2-this的指向"><a href="#2-this的指向" class="headerlink" title="2.this的指向"></a>2.this的指向</h4><p>1.使用function定义的函数，this的指向随着调用环境的变化而变化的。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//使用function定义的函数</span>
-<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> aa<span class="token punctuation">:</span> foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Window</span>
-obj<span class="token punctuation">.</span><span class="token function">aa</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//obj { aa: foo }</span>
-</code></pre>
-<p>2.而箭头函数中的this指向是固定不变的，一直指向的是定义它的环境，最近的作用域。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//使用箭头函数定义函数</span>
-<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> aa<span class="token punctuation">:</span>foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Window</span>
-obj<span class="token punctuation">.</span><span class="token function">aa</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Window</span>
+<h2 id="1-amp-amp"><a href="#1-amp-amp" class="headerlink" title="1.&amp;&amp;"></a>1.&amp;&amp;</h2><blockquote>
+<p>Boolean判断，遇到假的值，返回该假值，停止后面判断。 </p>
+</blockquote>
+<blockquote>
+<p>全为真的值，返回最后一个值。 </p>
+</blockquote>
+<blockquote>
+<p>返回第一个遇到的假值。没有假值，返回最后一个真值 </p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token comment" spellcheck="true">// 举例 </span>
+ <span class="token string">'s'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">false</span> <span class="token comment" spellcheck="true">//结果：0  's','0'为真，计算到 0，值为假。返回该值，停止比较 </span>
 
+<span class="token comment" spellcheck="true">//  全真 </span>
+<span class="token string">'s'</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> <span class="token string">'123'</span> <span class="token comment" spellcheck="true">// 123  </span>
 
-<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>
-  foo<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-  bar<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>foo<span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-a<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//undefined  原因:箭头函数中的this并不是指向a这个对象。对象a并不能构成一个作用域，所以再往上到达全局作用域，this就指向全局作用域,这里this指向Window。</span>
 </code></pre>
-<h4 id="3-构造函数"><a href="#3-构造函数" class="headerlink" title="3.构造函数"></a>3.构造函数</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//使用function方法定义构造函数</span>
-<span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">var</span> lenhart <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span>lenhart<span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>lenhart<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//{name: 'lenhart', age: 25}</span>
+<h3 id="2"><a href="#2" class="headerlink" title="2.||"></a>2.||</h3><blockquote>
+<p>Boolean判断，返回第一个真的值，停止后面判断。 </p>
+</blockquote>
+<blockquote>
+<p>全假值，返回最后一个值。 </p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token string">'s'</span> <span class="token operator">||</span> <span class="token boolean">false</span> <span class="token operator">||</span> <span class="token string">'0'</span> <span class="token operator">||</span> <span class="token boolean">true</span>  <span class="token comment" spellcheck="true">// 's' </span>
+<span class="token number">0</span> <span class="token operator">||</span> <span class="token boolean">false</span> <span class="token operator">||</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token string">'0'</span> <span class="token operator">||</span> <span class="token boolean">false</span> <span class="token comment" spellcheck="true">// '0' </span>
+<span class="token comment" spellcheck="true">// 全假 </span>
+<span class="token boolean">false</span> <span class="token operator">||</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token keyword">null</span> 
 </code></pre>
-<p>function是可以定义构造函数的，而箭头函数是不行的。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//尝试使用箭头函数</span>
-<span class="token keyword">var</span> Person <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">var</span> lenhart <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'lenhart'</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Uncaught TypeError: Person is not a constructor</span>
-</code></pre>
-<h4 id="4-变量提升"><a href="#4-变量提升" class="headerlink" title="4.变量提升"></a>4.变量提升</h4><p>由于js的内存机制，function的级别最高，而用箭头函数定义函数的时候，需要var(let const定义的时候更不必说)关键词，而var所定义的变量不能得到变量提升，故箭头函数一定要定义于调用之前！</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//123</span>
-<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'123'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token function">arrowFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//Uncaught TypeError: arrowFn is not a function</span>
-<span class="token keyword">var</span> arrowFn <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<h2 id="3-amp-amp-优先级高，先算-amp-amp-再"><a href="#3-amp-amp-优先级高，先算-amp-amp-再" class="headerlink" title="3.&amp;&amp;优先级高，先算&amp;&amp; 再 ||"></a>3.&amp;&amp;优先级高，先算&amp;&amp; 再 ||</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token string">''</span><span class="token operator">||</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token number">3</span><span class="token operator">||</span><span class="token number">4</span><span class="token operator">&amp;&amp;</span><span class="token number">5</span><span class="token operator">&amp;&amp;</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 先计算 4&amp;&amp;5&amp;&amp;0 => 0 </span>
+<span class="token string">''</span><span class="token operator">||</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token number">3</span><span class="token operator">||</span><span class="token number">0</span> <span class="token comment" spellcheck="true">// 遇到第一个真值3 返回 </span>
+<span class="token number">3</span>  <span class="token comment" spellcheck="true">//结果 </span>
 </code></pre>
 
             </div>
@@ -512,7 +495,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html" class="b-link-green">ES6中箭头函数和function的区别</a>
+                    <a href="/yun-suan.html" class="b-link-green">&amp;&amp; || 运算</a>
                 </p>
             </div>
         </div>
@@ -534,7 +517,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2018-11-27T21-45-00',
+        id: '2018-12-26T11-39-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -558,6 +541,54 @@ console<span class="token punctuation">.</span><span class="token function">log<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
+                <a href="/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="input只能输入数字并限制长度">
+                        
+                        <span class="card-title">input只能输入数字并限制长度</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">随笔记录情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式
+&lt;input type=&quot;text&quot;  maxlength=&quot;5&quot; /&gt;  效果ok，</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/html5/" class="post-category" target="_blank">
+                                    html5
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/htm5/" target="_blank">
+                        <span class="chip bg-color">htm5</span>
+                    </a>
+                    
+                    <a href="/tags/css/" target="_blank">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
                 <a href="/react-xin-jiu-sheng-ming-zhou-qi-dui-bi-v16-3.html">
                     <div class="card-image">
                         
@@ -570,9 +601,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 <div class="card-content article-content">
                     <div class="summary">生命周期对react非常重要,对很多新手来说,搞不懂哪个阶段该做什么事情,迷茫,乱用函数,导致性能下降,死循环.  文章主要记录了react平时常用的生命周期函数,及平时开发遇到的注意事项,自从react v16.3更新后,其生命周期还是发</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -590,55 +621,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                     <a href="/tags/react生命周期/" target="_blank">
                         <span class="chip bg-color">react生命周期</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/nginx-da-jian-he-pei-zhi.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="Nginx 搭建和配置">
-                        
-                        <span class="card-title">Nginx 搭建和配置</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在搬瓦工租的,不多废话直接上干货
-环境：
-操作系统：CenOS 6 x86
-Nginx 版本：1.14.0
-
-
-Nginx搭建1.第一步 创建源配置在/etc/yum.repos.</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/服务器/" class="post-category" target="_blank">
-                                    服务器
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Nginx/" target="_blank">
-                        <span class="chip bg-color">Nginx </span>
                     </a>
                     
                 </div>
