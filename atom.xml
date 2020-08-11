@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-08-11T03:42:59.807Z</updated>
+  <updated>2020-08-11T09:00:08.822Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new指令实现 和 es5 es6对比</title>
+    <link href="https://www.ding51.cn/new-guo-cheng-shi-xian.html"/>
+    <id>https://www.ding51.cn/new-guo-cheng-shi-xian.html</id>
+    <published>2020-08-11T08:02:00.000Z</published>
+    <updated>2020-08-11T09:00:08.822Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;1、es5-new的过程&quot;&gt;&lt;a href=&quot;#1、es5-new的过程&quot; class=&quot;headerlink&quot; title=&quot;1、es5 new的过程&quot;&gt;&lt;/a&gt;1、es5 new的过程&lt;/h5&gt;&lt;ol&gt;
+&lt;li&gt;生成一个新对象
+        
+      
+    
+    </summary>
+    
+    
+      <category term="new过程" scheme="https://www.ding51.cn/tags/new%E8%BF%87%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>this 和 构造函数有return </title>
@@ -528,33 +553,6 @@
       <category term="箭头函数this" scheme="https://www.ding51.cn/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this/"/>
     
       <category term="ES6" scheme="https://www.ding51.cn/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Nginx 搭建和配置</title>
-    <link href="https://www.ding51.cn/nginx-da-jian-he-pei-zhi.html"/>
-    <id>https://www.ding51.cn/nginx-da-jian-he-pei-zhi.html</id>
-    <published>2018-11-21T02:01:00.000Z</published>
-    <updated>2020-05-22T09:00:23.404Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在&lt;a href=&quot;https://www.bwh8.net&quot; target=&quot;_blank&quot;&gt;搬瓦工&lt;/a&gt;租的,不多废话直接上干货&lt;/p&gt;
-&lt;h6 id=&quot;环境：&quot;&gt;&lt;a href=&quot;#环境：&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="服务器" scheme="https://www.ding51.cn/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-    
-      <category term="Nginx " scheme="https://www.ding51.cn/tags/Nginx/"/>
     
   </entry>
   

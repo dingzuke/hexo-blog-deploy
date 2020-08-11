@@ -5,10 +5,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="this 和 构造函数有return , Ding Zuke&#39;s blog">
-    <meta name="description" content="一、 es5中 this  1.在普通函数中的this总是代表他的直接调用者，默认情况下指向windos 
-  2.在严格模式下，没有直接调用者的函数中的this是undefined使用   
-  3.call,apply,bind，thi">
+    <meta name="keywords" content="new指令实现 和 es5 es6对比, Ding Zuke&#39;s blog">
+    <meta name="description" content="1、es5 new的过程
+生成一个新对象 
+为这个对象设置prototype 
+使用this执行构造函数 
+返回这个对象 
+
+2、手写newfunction _new() { 
+    // 1.生成一个新对象 
+    let obj= ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>this 和 构造函数有return  | Ding Zuke&#39;s blog</title>
+    <title>new指令实现 和 es5 es6对比 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,7 +266,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        this 和 构造函数有return 
+                        new指令实现 和 es5 es6对比
                     </div>
                 </div>
             </div>
@@ -280,26 +286,13 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/this/" target="_blank">
-                    <span class="chip bg-color">this</span>
-                </a>
-                
-                <a href="/tags/构造函数return/" target="_blank">
-                    <span class="chip bg-color">构造函数return </span>
+                <a href="/tags/new过程/" target="_blank">
+                    <span class="chip bg-color">new过程</span>
                 </a>
                 
             </div>
             
             <div class="post-info">
-                
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/js/" class="post-category" target="_blank">
-                        js
-                    </a>
-                    
-                </span>
                 
 
                 <span class="post-date">
@@ -310,119 +303,96 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、-es5中-this"><a href="#一、-es5中-this" class="headerlink" title="一、 es5中 this"></a>一、 es5中 this</h2><pre class=" language-plain"><code class="language-plain">  1.在普通函数中的this总是代表他的直接调用者，默认情况下指向windos 
-  2.在严格模式下，没有直接调用者的函数中的this是undefined使用   
-  3.call,apply,bind，this指向的是绑定的对象； 
-  4.构造函数中的this 
-</code></pre>
-<h2 id="二、-es6-箭头函数中-this"><a href="#二、-es6-箭头函数中-this" class="headerlink" title="二、  es6 箭头函数中 this"></a>二、  es6 箭头函数中 this</h2><pre class=" language-plain"><code class="language-plain">箭头函数中的this指向是固定不变的，指向的是定义它的环境，最近的作用域。 
-</code></pre>
-<p><strong>1、点击事件绑定的this指向</strong> </p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>body<span class="token operator">></span> 
-    <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"draw"</span> id<span class="token operator">=</span><span class="token string">"draw"</span><span class="token operator">></span>Draw<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span> 
-    <span class="token operator">&lt;</span>div onclick<span class="token operator">=</span><span class="token string">"func(this)"</span>  name<span class="token operator">=</span><span class="token string">"book1"</span><span class="token operator">></span>click div<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span> 
+                <h5 id="1、es5-new的过程"><a href="#1、es5-new的过程" class="headerlink" title="1、es5 new的过程"></a>1、es5 new的过程</h5><ol>
+<li>生成一个新对象 </li>
+<li>为这个对象设置prototype </li>
+<li>使用this执行构造函数 </li>
+<li>返回这个对象 </li>
+</ol>
+<h5 id="2、手写new"><a href="#2、手写new" class="headerlink" title="2、手写new"></a>2、手写new</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">_new</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token comment" spellcheck="true">// 1.生成一个新对象 </span>
+    <span class="token keyword">let</span> obj<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> 
 
-    <span class="token operator">&lt;</span>script<span class="token operator">></span>             
-      <span class="token keyword">function</span> <span class="token function">func</span><span class="token punctuation">(</span>_this<span class="token punctuation">)</span> <span class="token punctuation">{</span>     
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_this<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 当前点击的div </span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// window </span>
-      <span class="token punctuation">}</span>      
-
-       <span class="token keyword">var</span> drawDom <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'draw'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-       drawDom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 当前div </span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>  
-       drawDom<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> 
-          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// window </span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span> 
-    <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span> 
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span> 
+    <span class="token comment" spellcheck="true">// 第一个参数是构造函数 </span>
+    <span class="token keyword">let</span> <span class="token punctuation">[</span>constructor<span class="token punctuation">,</span> <span class="token operator">...</span>args<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>arguments<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// 2.为这个对象设置prototype;实际上就是生产了一个新的上下文 </span>
+    obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// 使用apply在obj作用域中调用构造器函数，属性和方法被添加到 this 引用的对象即obj中 </span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> constructor<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"object"</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"function"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token comment" spellcheck="true">// 如果构造函数执行的结果返回的是一个对象，那么返回这个对象 </span>
+        <span class="token keyword">return</span> result<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token comment" spellcheck="true">// 如果构造函数返回的不是一个对象，返回创建的新对象 </span>
+    <span class="token keyword">return</span> obj<span class="token punctuation">;</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">var</span> person1<span class="token operator">=</span><span class="token function">_new</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 相当于  var person1 = new Person(20); </span>
 </code></pre>
-<p><strong>2、嵌套函数</strong> </p>
-<blockquote>
-<p>和变量不同，关键字this没有作用域的限制，嵌套的函数不会从调用它的函数中继承this。</p>
-</blockquote>
-<blockquote>
-<p>1、如果嵌套函数作为方法调用，其this的值指向调用它的对象。 </p>
-</blockquote>
-<blockquote>
-<p>2、如果嵌套函数作为函数调用，其this值不是全局对象（非严格模式下）就是undefined（严格模式下）。 </p>
-</blockquote>
-<blockquote>
-<p>很多人误以为调用嵌套函数时this会指向调用外层函数的上下文。如果你想访问这个外部函数的this值，需要将this的值保存在一个变量里，这个变量和内部函数都在同一个作用域内。通常用self来保存this。</p>
-</blockquote>
-<blockquote>
-<p>——《犀牛书》8.2 函数调用 </p>
-</blockquote>
-<p>举例说明 </p>
-<pre class=" language-plain"><code class="language-plain">var  name  =  "windName" 
-var data = { 
-     name:' d a taNam e', 
-     fn: function (){ 
-            var  name  =  "fnName" 
-           console.log(this .name ) //输出：dataName this指向data 
-            var fn2 = () =>{ 
-            var name = "fn2Name" 
-                 console.log(this.name)  //输出：dataName 
-           }     
-        var fn3 = function(){ 
-            var name = "fn3Name" 
-            console.log(this.name) //输出：windName 
-        } 
-           fn2(); 
-        fn3(); // ** 嵌套的函数调用  this指向window(非严格模式) 
-     } 
-} 
-data.fn();   // 作为方法调用  
-输出： dataName dataName windName 
-</code></pre>
-<pre class=" language-plain"><code class="language-plain">var a = { 
-  foo: 1, 
-  bar: () => console.log(this.foo)//这里是箭头函数指向 定义该箭头函数的作用域 
-} 
-a.bar()  //undefined  this指向的window 
+<h5 id="3、es5和es6中new的实现对比"><a href="#3、es5和es6中new的实现对比" class="headerlink" title="3、es5和es6中new的实现对比"></a>3、es5和es6中new的实现对比</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// -------------------------es5-----------------------------</span>
+<span class="token keyword">function</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//x，y定义在对象自身上面</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+Point<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>add <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//静态属性</span>
+Person<span class="token punctuation">.</span>total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">//静态方法</span>
+Point<span class="token punctuation">.</span>counter <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+    <span class="token keyword">return</span> <span class="token string">'staticFn'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-</code></pre>
-<h2 id="三、-当函数构造函数有return时候"><a href="#三、-当函数构造函数有return时候" class="headerlink" title="三、 当函数构造函数有return时候"></a>三、 当函数构造函数有return时候</h2><blockquote>
-<p>1.return的是五种简单数据类型：String，Numbe r ，Boolean，Null，Undefined。</p>
-</blockquote>
-<blockquote>
-<p>这种情况下，忽视return值，依然返回this对象。 </p>
-</blockquote>
-<blockquote>
-<p>2.return的是Object 引用类型。 </p>
-</blockquote>
-<blockquote>
-<p>这种情况下，不再返回this对象，而是返回return语句的返回值 </p>
-</blockquote>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 正常情况 </span>
-<span class="token keyword">function</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-a<span class="token punctuation">.</span>age <span class="token comment" spellcheck="true">// 12 </span>
-<span class="token comment" spellcheck="true">//举例  </span>
-<span class="token keyword">function</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span> 
-  <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  
-<span class="token punctuation">}</span> 
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-a<span class="token punctuation">.</span>age <span class="token comment" spellcheck="true">// undefined   return返回的是引用类型。返回的是 {} </span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出5</span>
 
-<span class="token comment" spellcheck="true">//举例 </span>
-<span class="token keyword">function</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span> 
-  <span class="token keyword">return</span> <span class="token punctuation">{</span>age<span class="token punctuation">:</span> <span class="token number">99</span><span class="token punctuation">}</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-a<span class="token punctuation">.</span>age <span class="token comment" spellcheck="true">//输出： 99  return返回的是引用类型。返回的是 {age: 99} </span>
-<span class="token comment" spellcheck="true">//举例 </span>
-<span class="token keyword">function</span> <span class="token function">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span> 
-  <span class="token keyword">return</span> <span class="token number">13</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-a<span class="token punctuation">.</span>age <span class="token comment" spellcheck="true">// 输出：12  return 12 返回的数值类型，返回this的对象 </span>
+<span class="token comment" spellcheck="true">// -------------------------es6-----------------------------</span>
+<span class="token keyword">class</span> <span class="token class-name">Point</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">//相当于java中的构造函数，如果不写默认为空</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//x，y定义在对象自身上面</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//静态属性</span>
+  <span class="token keyword">static</span> total <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//静态方法 </span>
+  <span class="token keyword">static</span> <span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token string">'staticFn'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                <span class="token comment" spellcheck="true">//该方法定义在Point.prototype上</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+p<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出5</span>
+</code></pre>
+<h6 id="4、ES6中当函数用new关键词的时候，增加了new-target属性来判断当前调用的构造函数"><a href="#4、ES6中当函数用new关键词的时候，增加了new-target属性来判断当前调用的构造函数" class="headerlink" title="4、ES6中当函数用new关键词的时候，增加了new.target属性来判断当前调用的构造函数"></a>4、ES6中当函数用new关键词的时候，增加了new.target属性来判断当前调用的构造函数</h6><p>1、可以限制函数的调用，比如一定要用new命令来调用</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target <span class="token operator">===</span> Person<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'必须用new生成实例'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2、限制类的调用方法，判断new.target是不是未定义。写出只能被继承使用的类。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target <span class="token operator">===</span> Shape<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'本类不能实例化'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>length<span class="token punctuation">,</span> width<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Shape</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 报错</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 正确</span>
 </code></pre>
 
             </div>
@@ -562,7 +532,7 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/this-zhi-xiang-he-gou-zao-han-shu-you-return.html" class="b-link-green">this 和 构造函数有return </a>
+                    <a href="/new-guo-cheng-shi-xian.html" class="b-link-green">new指令实现 和 es5 es6对比</a>
                 </p>
             </div>
         </div>
@@ -584,7 +554,7 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2020-08-11T11-31-00',
+        id: '2020-08-11T16-02-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -605,8 +575,8 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/new-guo-cheng-shi-xian.html">
                     <div class="card-image">
@@ -628,9 +598,9 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
     // 1.生成一个新对象 
     let obj= </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -639,6 +609,7 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -655,27 +626,22 @@ a<span class="token punctuation">.</span>age <span class="token comment" spellch
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/yuan-xing-lian-ti-jie-xi.html">
+                <a href="/this-zhi-xiang-he-gou-zao-han-shu-you-return.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="原型题-解析">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="this 和 构造函数有return ">
                         
-                        <span class="card-title">原型题-解析</span>
+                        <span class="card-title">this 和 构造函数有return </span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">题目如下：
-function Fun(){ 
-     var getName = function(){ 
-         console.log(1); 
-     } 
-     return this; 
- } 
- Fun.get</div>
+                    <div class="summary">一、 es5中 this  1.在普通函数中的this总是代表他的直接调用者，默认情况下指向windos 
+  2.在严格模式下，没有直接调用者的函数中的this是undefined使用   
+  3.call,apply,bind，thi</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -692,16 +658,12 @@ function Fun(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/原型/" target="_blank">
-                        <span class="chip bg-color">原型 </span>
+                    <a href="/tags/this/" target="_blank">
+                        <span class="chip bg-color">this</span>
                     </a>
                     
-                    <a href="/tags/变量提升/" target="_blank">
-                        <span class="chip bg-color">变量提升</span>
-                    </a>
-                    
-                    <a href="/tags/函数提升/" target="_blank">
-                        <span class="chip bg-color">函数提升</span>
+                    <a href="/tags/构造函数return/" target="_blank">
+                        <span class="chip bg-color">构造函数return </span>
                     </a>
                     
                 </div>
