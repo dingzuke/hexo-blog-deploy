@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-08-11T09:00:08.822Z</updated>
+  <updated>2020-08-18T07:51:12.023Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>new 的实现过程  es5 es6类的对比</title>
+    <link href="https://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html"/>
+    <id>https://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html</id>
+    <published>2020-08-18T07:43:45.000Z</published>
+    <updated>2020-08-18T07:51:12.023Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;1、-手写new的实现过程&quot;&gt;&lt;a href=&quot;#1、-手写new的实现过程&quot; class=&quot;headerlink&quot; title=&quot;1、 手写new的实现过程&quot;&gt;&lt;/a&gt;1、 手写new的实现过程&lt;/h3&gt;&lt;p&gt;主要实现步骤：
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>new指令实现 和 es5 es6对比</title>
@@ -523,36 +545,6 @@
     
     
       <category term="react生命周期" scheme="https://www.ding51.cn/tags/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES6中箭头函数和function的区别</title>
-    <link href="https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html"/>
-    <id>https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html</id>
-    <published>2018-11-27T13:45:00.000Z</published>
-    <updated>2020-08-10T07:33:58.055Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;箭头函数和function的区别总结&quot;&gt;&lt;a href=&quot;#箭头函数和function的区别总结&quot; class=&quot;headerlink&quot; title=&quot;箭头函数和function的区别总结&quot;&gt;&lt;/a&gt;箭头函数和function的区别总结&lt;/h2&gt;&lt;h4
-        
-      
-    
-    </summary>
-    
-      <category term="ES6" scheme="https://www.ding51.cn/categories/ES6/"/>
-    
-    
-      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
-    
-      <category term="箭头函数this" scheme="https://www.ding51.cn/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this/"/>
-    
-      <category term="ES6" scheme="https://www.ding51.cn/tags/ES6/"/>
     
   </entry>
   
