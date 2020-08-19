@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-08-18T08:07:36.582Z</updated>
+  <updated>2020-08-19T03:31:51.034Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>new 的实现过程  es5 es6类的对比</title>
     <link href="https://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html"/>
     <id>https://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html</id>
-    <published>2020-08-18T07:43:45.000Z</published>
-    <updated>2020-08-18T08:07:36.582Z</updated>
+    <published>2020-08-18T07:43:00.000Z</published>
+    <updated>2020-08-19T03:31:51.034Z</updated>
     
     <summary type="html">
     
@@ -35,31 +35,14 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>new指令实现 和 es5 es6对比</title>
-    <link href="https://www.ding51.cn/new-guo-cheng-shi-xian.html"/>
-    <id>https://www.ding51.cn/new-guo-cheng-shi-xian.html</id>
-    <published>2020-08-11T08:02:00.000Z</published>
-    <updated>2020-08-11T09:00:08.822Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h5 id=&quot;1、es5-new的过程&quot;&gt;&lt;a href=&quot;#1、es5-new的过程&quot; class=&quot;headerlink&quot; title=&quot;1、es5 new的过程&quot;&gt;&lt;/a&gt;1、es5 new的过程&lt;/h5&gt;&lt;ol&gt;
-&lt;li&gt;生成一个新对象
-        
-      
-    
-    </summary>
+      <category term="js" scheme="https://www.ding51.cn/categories/js/"/>
     
     
-      <category term="new过程" scheme="https://www.ding51.cn/tags/new%E8%BF%87%E7%A8%8B/"/>
+      <category term="new实现" scheme="https://www.ding51.cn/tags/new%E5%AE%9E%E7%8E%B0/"/>
+    
+      <category term="es5类" scheme="https://www.ding51.cn/tags/es5%E7%B1%BB/"/>
+    
+      <category term="es6类" scheme="https://www.ding51.cn/tags/es6%E7%B1%BB/"/>
     
   </entry>
   
@@ -460,9 +443,9 @@
     </summary>
     
     
-      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
@@ -545,6 +528,36 @@
     
     
       <category term="react生命周期" scheme="https://www.ding51.cn/tags/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6中箭头函数和function的区别</title>
+    <link href="https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html"/>
+    <id>https://www.ding51.cn/es6-zhong-jian-tou-han-shu-he-function-de-qu-bie.html</id>
+    <published>2018-11-27T13:45:00.000Z</published>
+    <updated>2020-08-10T07:33:58.055Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;箭头函数和function的区别总结&quot;&gt;&lt;a href=&quot;#箭头函数和function的区别总结&quot; class=&quot;headerlink&quot; title=&quot;箭头函数和function的区别总结&quot;&gt;&lt;/a&gt;箭头函数和function的区别总结&lt;/h2&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+      <category term="ES6" scheme="https://www.ding51.cn/categories/ES6/"/>
+    
+    
+      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
+    
+      <category term="箭头函数this" scheme="https://www.ding51.cn/tags/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0this/"/>
+    
+      <category term="ES6" scheme="https://www.ding51.cn/tags/ES6/"/>
     
   </entry>
   
