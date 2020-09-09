@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>盒子模型，行内元素边距，置换元素</title>
+      <link href="/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html"/>
+      <url>/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="一、-盒子模型"><a href="#一、-盒子模型" class="headerlink" title="一、 盒子模型"></a>一、 盒子模型</h3><p><img src="/images/pasted-36.png" alt="upload successful"></p><pre class=" language-plain"><code class="language-plain">box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。</code></pre><p><img src="/images/pasted-35.png" alt="upload successful"></p><pre class=" language-plain"><code class="language-plain">box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决定了元素的边框盒。元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</code></pre><h3 id="二、行内元素（如：span、em）"><a href="#二、行内元素（如：span、em）" class="headerlink" title="二、行内元素（如：span、em）"></a>二、行内元素（如：span、em）</h3><ol><li><p>具有盒子模型。</p></li><li><p>设置宽高不起左右。</p></li><li><p>padding  内边距上下左右都有效果，但是上下是效果显示，不会产生实际的作用，不影响其他元素。左右会产生实际距离。</p></li><li><p>margin  只有左右产生效果影响，上下不会产生任何效果作用。</p></li></ol><h3 id="三、-置换元素"><a href="#三、-置换元素" class="headerlink" title="三、 置换元素"></a>三、 置换元素</h3><p>置换元素：指浏览器是根据元素的属性来判断具体要显示的内容的元素。比如<code>img</code>标签，浏览器是根据其<code>src</code>的属性值来读取这个元素所包含的内容的，常见的替换元素还有</p><p><code>input</code>、<code>textarea</code>、<code>select</code>、<code>object</code>、<code>iframe</code>和<code>video</code>等等</p><p>img虽然是行内元素，但是它是置换元素，他的padding 和 margin 都会产生实际作用。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> css </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>new 的实现过程  es5 es6类的对比</title>
       <link href="/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html"/>
       <url>/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html</url>
@@ -383,9 +402,9 @@
       
         <tags>
             
-            <tag> map对象 </tag>
-            
             <tag> js优化 </tag>
+            
+            <tag> map对象 </tag>
             
         </tags>
       

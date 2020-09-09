@@ -5,9 +5,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="input只能输入数字并限制长度, Ding Zuke&#39;s blog">
-    <meta name="description" content="随笔记录情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式
-&amp;lt;input type=&amp;quot;text&amp;quot;  maxlength=&amp;quot;5&amp;quot; /&amp;gt;  效果ok，">
+    <meta name="keywords" content="盒子模型，行内元素边距，置换元素, Ding Zuke&#39;s blog">
+    <meta name="description" content="一、 盒子模型
+box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+
+
+box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>input只能输入数字并限制长度 | Ding Zuke&#39;s blog</title>
+    <title>盒子模型，行内元素边距，置换元素 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +256,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        input只能输入数字并限制长度
+                        盒子模型，行内元素边距，置换元素
                     </div>
                 </div>
             </div>
@@ -277,56 +280,45 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/htm5/" target="_blank">
-                    <span class="chip bg-color">htm5</span>
-                </a>
-                
-                <a href="/tags/css/" target="_blank">
-                    <span class="chip bg-color">css</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/html5/" class="post-category" target="_blank">
-                        html5
+                    <a href="/categories/css/" class="post-category" target="_blank">
+                        css
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-26
+                    <i class="fa fa-clock-o fa-fw"></i>2020-09-09
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="随笔记录"><a href="#随笔记录" class="headerlink" title="随笔记录"></a>随笔记录</h5><p>情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式</p>
-<p><code>&lt;input type=&quot;text&quot;  maxlength=&quot;5&quot; /&gt;</code>  效果ok，当 <code>&lt;input type=&quot;number&quot;  maxlength=&quot;5&quot; /&gt;</code>时maxlength失效，长度可以无限输入 </p>
-<p>解决参考代码:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>style<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">/*在chrome下移除input[number]的上下箭头*/</span>
-
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>outer<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">,</span>
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>inner<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">{</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>appearance<span class="token punctuation">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
-    margin<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/*在firefox下移除input[number]的上下箭头*/</span>
-input<span class="token punctuation">[</span>type<span class="token operator">=</span><span class="token string">"number"</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token operator">-</span>moz<span class="token operator">-</span>appearance<span class="token punctuation">:</span>textfield<span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span>style<span class="token operator">></span>
-
-<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"number"</span> oninput<span class="token operator">=</span><span class="token string">"if(value.length>5)value=value.slice(0,5)"</span><span class="token operator">></span>
+                <h3 id="一、-盒子模型"><a href="#一、-盒子模型" class="headerlink" title="一、 盒子模型"></a>一、 盒子模型</h3><p><img src="/images/pasted-36.png" alt="upload successful"></p>
+<pre class=" language-plain"><code class="language-plain">box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
 </code></pre>
+<p><img src="/images/pasted-35.png" alt="upload successful"></p>
+<pre class=" language-plain"><code class="language-plain">box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决定了元素的边框盒。元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
+</code></pre>
+<h3 id="二、行内元素（如：span、em）"><a href="#二、行内元素（如：span、em）" class="headerlink" title="二、行内元素（如：span、em）"></a>二、行内元素（如：span、em）</h3><ol>
+<li><p>具有盒子模型。</p>
+</li>
+<li><p>设置宽高不起左右。</p>
+</li>
+<li><p>padding  内边距上下左右都有效果，但是上下是效果显示，不会产生实际的作用，不影响其他元素。左右会产生实际距离。</p>
+</li>
+<li><p>margin  只有左右产生效果影响，上下不会产生任何效果作用。</p>
+</li>
+</ol>
+<h3 id="三、-置换元素"><a href="#三、-置换元素" class="headerlink" title="三、 置换元素"></a>三、 置换元素</h3><p>置换元素：指浏览器是根据元素的属性来判断具体要显示的内容的元素。比如<code>img</code>标签，浏览器是根据其<code>src</code>的属性值来读取这个元素所包含的内容的，常见的替换元素还有</p>
+<p><code>input</code>、<code>textarea</code>、<code>select</code>、<code>object</code>、<code>iframe</code>和<code>video</code>等等</p>
+<p>img虽然是行内元素，但是它是置换元素，他的padding 和 margin 都会产生实际作用。</p>
 
             </div>
             <hr/>
@@ -465,7 +457,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html" class="b-link-green">input只能输入数字并限制长度</a>
+                    <a href="/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html" class="b-link-green">盒子模型，行内元素边距，置换元素</a>
                 </p>
             </div>
         </div>
@@ -487,7 +479,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2018-12-26T22-01-00',
+        id: '2020-09-09T11-29-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -508,45 +500,41 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html">
+                <a href="/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS如何优雅的写判断语句(一)">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="盒子模型，行内元素边距，置换元素">
                         
-                        <span class="card-title">JS如何优雅的写判断语句(一)</span>
+                        <span class="card-title">盒子模型，行内元素边距，置换元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.复杂判断优雅写法前言:js代码时经常遇到复杂逻辑判断的情况，通常大家可以用if/else或者switch来实现多个条件判断，但这样会有个问题，随着逻辑复杂度的增加，代码中的if/else/switch会变得越来越臃肿，越来越看不懂。
-1</div>
+                    <div class="summary">一、 盒子模型
+box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+
+
+box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-09
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            丁祖科
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/css/" class="post-category" target="_blank">
+                                    css
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/js优化/" target="_blank">
-                        <span class="chip bg-color">js优化</span>
-                    </a>
-                    
-                    <a href="/tags/map对象/" target="_blank">
-                        <span class="chip bg-color">map对象</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -555,35 +543,36 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/yun-suan.html">
+                <a href="/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="&& || 运算">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="new 的实现过程  es5 es6类的对比">
                         
-                        <span class="card-title">&& || 运算</span>
+                        <span class="card-title">new 的实现过程  es5 es6类的对比</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1; // true 
-"0" // true 
-0; // false 
-false; // false 
-true; // true 
-"string"; // true 
-"" // false 
-null // false 
-NaN</div>
+                    <div class="summary">1、 手写new的实现过程主要实现步骤： 
+
+生成一个新对象 
+为这个对象设置prototype 
+使用this执行构造函数 
+返回这个对象 
+
+function _new() { 
+    // 1.生成一个新对象 
+    let ob</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js基础/" class="post-category" target="_blank">
-                                    js基础
+                            <a href="/categories/js/" class="post-category" target="_blank">
+                                    js
                                 </a>
                             
                             
@@ -593,12 +582,16 @@ NaN</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">&amp;&amp;</span>
+                    <a href="/tags/new实现/" target="_blank">
+                        <span class="chip bg-color">new实现</span>
                     </a>
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">||</span>
+                    <a href="/tags/es5类/" target="_blank">
+                        <span class="chip bg-color">es5类</span>
+                    </a>
+                    
+                    <a href="/tags/es6类/" target="_blank">
+                        <span class="chip bg-color">es6类</span>
                     </a>
                     
                 </div>
