@@ -277,7 +277,7 @@
       <link href="/git-chang-yong-dao-de-zhi-ling.html"/>
       <url>/git-chang-yong-dao-de-zhi-ling.html</url>
       
-        <content type="html"><![CDATA[<h4 id="开发时常用的指令"><a href="#开发时常用的指令" class="headerlink" title="开发时常用的指令"></a>开发时常用的指令</h4><h6 id="1-github配置-ssh-key配置"><a href="#1-github配置-ssh-key配置" class="headerlink" title="1. github配置 ssh key配置"></a>1. github配置 ssh key配置</h6><p><code>cd  ~/.ssh</code> 查看是否有id_rsa、id_rsa.pub文件，如果没有需要手动生成。</p><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 一路回车.<br>登录github。打开setting-&gt;SSH keys，点击右上角 New SSH key，把生成好的公钥id_rsa.pub放进 key输入框中</p><h6 id="2-git常用命令"><a href="#2-git常用命令" class="headerlink" title="2. git常用命令"></a>2. git常用命令</h6><p><code>git branch</code> //显示分支一览表，同时确认当前所在的分支<br><code>git checkout -b aaa</code> //创建名为aaa的分支，并且切换到aaa分支  //创建名为aaa的分支<br><code>git checkout aaa</code> // 切换到aaa分支<br><code>git checkout -</code> //切换到上一分支</p><p>不小心commit了一个不应该commit的修改，但是还没有push，想回滚那个commit.<br>命令：<br><code>git log</code> // 查看提交日志 复制下commit_id<br><code>git reset --hard commit_id</code> // 回滚 </p><p>查看更改的记录(后面可以加具体的文件名)<br><code>git diff</code></p><p>合并本地 分支代码<br><code>git merge test</code>    // test为合并进来的分支</p><p>远程仓库查看<br><code>git remote -v</code></p><p>添加远程仓库<br><code>git remote add upstream https://github.com/xxxxx/kts-portal.git</code></p><p>重置远程仓库路径<br><code>git remote set-url upstream https://github.com/xxxxxx/SpringBoot.git</code></p><p>更新远程分支列表<br><code>git remote update origin --prune</code><br><code>git remote update origin -p</code></p><p>拉取远程某个分支<br><code>git pull upstream dev</code></p>]]></content>
+        <content type="html"><![CDATA[<h4 id="开发时常用的指令"><a href="#开发时常用的指令" class="headerlink" title="开发时常用的指令"></a>开发时常用的指令</h4><h6 id="1-github配置-ssh-key配置"><a href="#1-github配置-ssh-key配置" class="headerlink" title="1. github配置 ssh key配置"></a>1. github配置 ssh key配置</h6><p><code>cd  ~/.ssh</code> 查看是否有id_rsa、id_rsa.pub文件，如果没有需要手动生成。</p><p><code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 一路回车.<br>登录github。打开setting-&gt;SSH keys，点击右上角 New SSH key，把生成好的公钥id_rsa.pub放进 key输入框中</p><h6 id="2-git常用命令"><a href="#2-git常用命令" class="headerlink" title="2. git常用命令"></a>2. git常用命令</h6><p><code>git branch</code> //显示分支一览表，同时确认当前所在的分支<br><code>git checkout -b aaa</code> //创建名为aaa的分支，并且切换到aaa分支  //创建名为aaa的分支<br><code>git checkout aaa</code> // 切换到aaa分支<br><code>git checkout -</code> //切换到上一分支</p><p>本地代码修改了，需要提交到另外一个未建新分支<br><code>git checkout -b newBranch</code> // 直接在本地新建<br><code>git push origin newBranch</code> // add&amp;&amp;commit后，直接推送该分支</p><p>同步远程分支列表（如：本地缺少分支，远程上有新分支添加’updateBranch’）<br><code>git branch -a</code> // 查看本地和远程的分支<br><code>git remote update origin --prune</code> // 更新本地分支列表。<br><code>git checkout updateBranch</code>  // 直接切换到该新分支updateBranch</p><p>不小心commit了一个不应该commit的修改，但是还没有push，想回滚那个commit.<br>命令：<br><code>git log</code> // 查看提交日志 复制下commit_id<br><code>git reset --hard commit_id</code> // 回滚 </p><p>查看更改的记录(后面可以加具体的文件名)<br><code>git diff</code></p><p>合并本地 分支代码<br><code>git merge test</code>    // test为合并进来的分支</p><p>远程仓库查看<br><code>git remote -v</code></p><p>添加远程仓库<br><code>git remote add upstream https://github.com/xxxxx/kts-portal.git</code></p><p>重置远程仓库路径<br><code>git remote set-url upstream https://github.com/xxxxxx/SpringBoot.git</code></p><p>更新远程分支列表<br><code>git remote update origin --prune</code><br><code>git remote update origin -p</code></p><p>拉取远程某个分支<br><code>git pull upstream dev</code></p>]]></content>
       
       
       <categories>
@@ -402,9 +402,9 @@
       
         <tags>
             
-            <tag> js优化 </tag>
-            
             <tag> map对象 </tag>
+            
+            <tag> js优化 </tag>
             
         </tags>
       
