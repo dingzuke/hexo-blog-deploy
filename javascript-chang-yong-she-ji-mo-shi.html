@@ -5,12 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="盒子模型，行内元素边距，置换元素, Ding Zuke&#39;s blog">
-    <meta name="description" content="一、 盒子模型
-box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
-
-
-box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决">
+    <meta name="keywords" content="JavaScript常用设计模式, Ding Zuke&#39;s blog">
+    <meta name="description" content="设计模式主要分为3类：1、创建型设计模式：专注于处理对象的创建Constructor构造器模式，Factory工厂模式，Singleton单例模式，builder生成器模式
+2、结构型设计模式：对象间组合，建立对象之间的关系Decorato">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>盒子模型，行内元素边距，置换元素 | Ding Zuke&#39;s blog</title>
+    <title>JavaScript常用设计模式 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -256,13 +253,13 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        盒子模型，行内元素边距，置换元素
+                        JavaScript常用设计模式
                     </div>
                 </div>
             </div>
@@ -282,43 +279,33 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
             
             <div class="post-info">
                 
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/css/" class="post-category" target="_blank">
-                        css
-                    </a>
-                    
-                </span>
-                
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2020-09-09
+                    <i class="fa fa-clock-o fa-fw"></i>2020-12-01
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="一、-盒子模型"><a href="#一、-盒子模型" class="headerlink" title="一、 盒子模型"></a>一、 盒子模型</h3><p><img src="/images/pasted-36.png" alt="upload successful"></p>
-<pre class=" language-plain"><code class="language-plain">box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+                <h5 id="设计模式主要分为3类："><a href="#设计模式主要分为3类：" class="headerlink" title="设计模式主要分为3类："></a>设计模式主要分为3类：</h5><h6 id="1、创建型设计模式：专注于处理对象的创建"><a href="#1、创建型设计模式：专注于处理对象的创建" class="headerlink" title="1、创建型设计模式：专注于处理对象的创建"></a>1、创建型设计模式：专注于处理对象的创建</h6><p>Constructor构造器模式，Factory工厂模式，Singleton单例模式，builder生成器模式</p>
+<h6 id="2、结构型设计模式：对象间组合，建立对象之间的关系"><a href="#2、结构型设计模式：对象间组合，建立对象之间的关系" class="headerlink" title="2、结构型设计模式：对象间组合，建立对象之间的关系"></a>2、结构型设计模式：对象间组合，建立对象之间的关系</h6><p>Decorator装饰者模式，Facade外观模式，Flyweight享元模式，Adapter适配器模式，Proxy代理模式</p>
+<h6 id="3、行为设计模式：简化和改善对象间的通信"><a href="#3、行为设计模式：简化和改善对象间的通信" class="headerlink" title="3、行为设计模式：简化和改善对象间的通信"></a>3、行为设计模式：简化和改善对象间的通信</h6><p>Mediator中介者模式，Observer观察者模式</p>
+<h5 id="一、-单例模式"><a href="#一、-单例模式" class="headerlink" title="一、 单例模式"></a>一、 单例模式</h5><p>单例模式限制一个类只有一个实例化对象。</p>
+<pre class=" language-javascript"><code class="language-javascript">    <span class="token keyword">class</span> <span class="token class-name">Obj</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// ....</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 利用闭包实现单例模式，确保obj类只有一个实例</span>
+    <span class="token keyword">function</span> singleton <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> instance<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>instance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Obj</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 </code></pre>
-<p><img src="/images/pasted-35.png" alt="upload successful"></p>
-<pre class=" language-plain"><code class="language-plain">box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决定了元素的边框盒。元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。
-</code></pre>
-<h3 id="二、行内元素（如：span、em）"><a href="#二、行内元素（如：span、em）" class="headerlink" title="二、行内元素（如：span、em）"></a>二、行内元素（如：span、em）</h3><ol>
-<li><p>具有盒子模型。</p>
-</li>
-<li><p>设置宽高不起左右。</p>
-</li>
-<li><p>padding  内边距上下左右都有效果，但是上下是效果显示，不会产生实际的作用，不影响其他元素。左右会产生实际距离。</p>
-</li>
-<li><p>margin  只有左右产生效果影响，上下不会产生任何效果作用。</p>
-</li>
-</ol>
-<h3 id="三、-置换元素"><a href="#三、-置换元素" class="headerlink" title="三、 置换元素"></a>三、 置换元素</h3><p>置换元素：指浏览器是根据元素的属性来判断具体要显示的内容的元素。比如<code>img</code>标签，浏览器是根据其<code>src</code>的属性值来读取这个元素所包含的内容的，常见的替换元素还有</p>
-<p><code>input</code>、<code>textarea</code>、<code>select</code>、<code>object</code>、<code>iframe</code>和<code>video</code>等等</p>
-<p>img虽然是行内元素，但是它是置换元素，他的padding 和 margin 都会产生实际作用。</p>
 
             </div>
             <hr/>
@@ -457,7 +444,7 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html" class="b-link-green">盒子模型，行内元素边距，置换元素</a>
+                    <a href="/javascript-chang-yong-she-ji-mo-shi.html" class="b-link-green">JavaScript常用设计模式</a>
                 </p>
             </div>
         </div>
@@ -479,7 +466,7 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2020-09-09T11-29-00',
+        id: '2020-12-01T15-53-17',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -500,8 +487,8 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/javascript-chang-yong-she-ji-mo-shi.html">
                     <div class="card-image">
@@ -516,9 +503,9 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
                     <div class="summary">设计模式主要分为3类：1、创建型设计模式：专注于处理对象的创建Constructor构造器模式，Factory工厂模式，Singleton单例模式，builder生成器模式
 2、结构型设计模式：对象间组合，建立对象之间的关系Decorato</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -527,6 +514,7 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -535,57 +523,36 @@ box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高�
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html">
+                <a href="/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="new 的实现过程  es5 es6类的对比">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="盒子模型，行内元素边距，置换元素">
                         
-                        <span class="card-title">new 的实现过程  es5 es6类的对比</span>
+                        <span class="card-title">盒子模型，行内元素边距，置换元素</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1、 手写new的实现过程主要实现步骤： 
+                    <div class="summary">一、 盒子模型
+box-sizing: content-box;//宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
 
-生成一个新对象 
-为这个对象设置prototype 
-使用this执行构造函数 
-返回这个对象 
 
-function _new() { 
-    // 1.生成一个新对象 
-    let ob</div>
+box-sizing: border-box;// 怪异盒子模型。 为元素设定的宽度和高度决</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-08-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-09-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js/" class="post-category" target="_blank">
-                                    js
+                            <a href="/categories/css/" class="post-category" target="_blank">
+                                    css
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/new实现/" target="_blank">
-                        <span class="chip bg-color">new实现</span>
-                    </a>
-                    
-                    <a href="/tags/es5类/" target="_blank">
-                        <span class="chip bg-color">es5类</span>
-                    </a>
-                    
-                    <a href="/tags/es6类/" target="_blank">
-                        <span class="chip bg-color">es6类</span>
-                    </a>
-                    
                 </div>
                 
             </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-09-09T03:36:09.247Z</updated>
+  <updated>2020-12-01T09:56:07.997Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript常用设计模式</title>
+    <link href="https://www.ding51.cn/javascript-chang-yong-she-ji-mo-shi.html"/>
+    <id>https://www.ding51.cn/javascript-chang-yong-she-ji-mo-shi.html</id>
+    <published>2020-12-01T07:53:17.000Z</published>
+    <updated>2020-12-01T09:56:07.997Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;设计模式主要分为3类：&quot;&gt;&lt;a href=&quot;#设计模式主要分为3类：&quot; class=&quot;headerlink&quot; title=&quot;设计模式主要分为3类：&quot;&gt;&lt;/a&gt;设计模式主要分为3类：&lt;/h5&gt;&lt;h6 id=&quot;1、创建型设计模式：专注于处理对象的创建&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>盒子模型，行内元素边距，置换元素</title>
@@ -526,32 +548,6 @@
       <category term="&amp;&amp;" scheme="https://www.ding51.cn/tags//"/>
     
       <category term="||" scheme="https://www.ding51.cn/tags//"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React生命周期(v16.3 之前版本)</title>
-    <link href="https://www.ding51.cn/react-xin-jiu-sheng-ming-zhou-qi-dui-bi-v16-3.html"/>
-    <id>https://www.ding51.cn/react-xin-jiu-sheng-ming-zhou-qi-dui-bi-v16-3.html</id>
-    <published>2018-12-09T21:14:00.000Z</published>
-    <updated>2020-05-22T09:00:23.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;生命周期对react非常重要,对很多新手来说,搞不懂哪个阶段该做什么事情,迷茫,乱用函数,导致性能下降,死循环.&lt;br&gt;  文章主要记录了react平时常用的生命周期函数,及平时开发遇到的注意事项,自从react v16.3更新后,其生命周期还是发生很大的改变,
-        
-      
-    
-    </summary>
-    
-      <category term="react" scheme="https://www.ding51.cn/categories/react/"/>
-    
-    
-      <category term="react生命周期" scheme="https://www.ding51.cn/tags/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
   </entry>
   
