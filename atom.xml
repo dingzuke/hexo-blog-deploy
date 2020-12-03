@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-12-01T09:56:07.997Z</updated>
+  <updated>2020-12-03T09:40:37.478Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.ding51.cn/javascript-chang-yong-she-ji-mo-shi.html"/>
     <id>https://www.ding51.cn/javascript-chang-yong-she-ji-mo-shi.html</id>
     <published>2020-12-01T07:53:17.000Z</published>
-    <updated>2020-12-01T09:56:07.997Z</updated>
+    <updated>2020-12-03T09:40:37.478Z</updated>
     
     <summary type="html">
     
@@ -489,9 +489,9 @@
     </summary>
     
     
-      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
-    
       <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
