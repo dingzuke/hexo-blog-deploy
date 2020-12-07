@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-12-07T05:44:24.760Z</updated>
+  <updated>2020-12-07T05:46:13.055Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>迭代器(Iterator)和生成器(Generator)</title>
     <link href="https://www.ding51.cn/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html"/>
     <id>https://www.ding51.cn/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html</id>
-    <published>2020-12-07T03:32:50.000Z</published>
-    <updated>2020-12-07T05:44:24.760Z</updated>
+    <published>2020-12-07T03:32:00.000Z</published>
+    <updated>2020-12-07T05:46:13.055Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,12 @@
     
     </summary>
     
+      <category term="ES6" scheme="https://www.ding51.cn/categories/ES6/"/>
+    
+    
+      <category term="迭代器Iterator" scheme="https://www.ding51.cn/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8Iterator/"/>
+    
+      <category term="生成器Generator" scheme="https://www.ding51.cn/tags/%E7%94%9F%E6%88%90%E5%99%A8Generator/"/>
     
   </entry>
   
@@ -511,9 +517,9 @@
     </summary>
     
     
-      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
