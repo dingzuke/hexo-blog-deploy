@@ -322,18 +322,19 @@
 <li>随后通过 next 方法进行向下迭代指向下一个位置， next 方法会返回当前位置的对象，对象包含了 value 和 done 两个属性， value 是当前属性的值， done 用于判断是否遍历结束</li>
 <li>当 done 为 true 时则遍历结束</li>
 </ul>
-<pre><code>let items = [&quot;zero&quot;, &quot;one&quot;, &quot;two&quot;];
-let it = items[Symbol.iterator]();
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"zero"</span><span class="token punctuation">,</span> <span class="token string">"one"</span><span class="token punctuation">,</span> <span class="token string">"two"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> it <span class="token operator">=</span> items<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-it.next();
-&gt;{value: &quot;zero&quot;, done: false}
-it.next();
-&gt;{value: &quot;one&quot;, done: false}
-it.next();
-&gt;{value: &quot;two&quot;, done: false}
-it.next();
-&gt;{value: undefined, done: true}
-</code></pre><h6 id="可迭代的数据结构："><a href="#可迭代的数据结构：" class="headerlink" title="可迭代的数据结构："></a>可迭代的数据结构：</h6><ol>
+it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {value: "zero", done: false}</span>
+it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {value: "one", done: false}</span>
+it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {value: "two", done: false}</span>
+it<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// {value: undefined, done: true}</span>
+</code></pre>
+<h6 id="可迭代的数据结构："><a href="#可迭代的数据结构：" class="headerlink" title="可迭代的数据结构："></a>可迭代的数据结构：</h6><ol>
 <li>Array</li>
 <li>String</li>
 <li>Map</li>
@@ -343,18 +344,19 @@ it.next();
 <h4 id="二、生成器"><a href="#二、生成器" class="headerlink" title="二、生成器"></a>二、生成器</h4><h6 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h6><p>生成器是一种返回迭代器的函数，通过function关键字后的星号(*)来表示，函数中会用到新的关键字yield。星号可以紧挨着function关键字，也可以在中间添加一个空格。<br>区别普通函数</p>
 <ul>
 <li>一是在 function 后面，函数名之前有个 * ；</li>
-<li>函数内部有 yield 表达式。<pre><code>// 生成器
-function *createIterator() {
-  yield 1;
-  yield 2;
-  yield 3;
-}
-// 生成器能像正规函数那样被调用，但会返回一个迭代器
-let iterator = createIterator();
-console.log(iterator.next().value); // 1
-console.log(iterator.next().value); // 2
-console.log(iterator.next().value); // 3
-</code></pre></li>
+<li>函数内部有 yield 表达式。<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 生成器</span>
+<span class="token keyword">function</span> <span class="token operator">*</span><span class="token function">createIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token number">3</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 生成器能像正规函数那样被调用，但会返回一个迭代器</span>
+<span class="token keyword">let</span> iterator <span class="token operator">=</span> <span class="token function">createIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 2</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>iterator<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 3</span>
+</code></pre>
+</li>
 </ul>
 
             </div>
