@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-12-07T05:48:42.590Z</updated>
+  <updated>2020-12-16T09:40:48.486Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js浏览器全屏模式</title>
+    <link href="https://www.ding51.cn/js-liu-lan-qi-quan-ping-mo-shi.html"/>
+    <id>https://www.ding51.cn/js-liu-lan-qi-quan-ping-mo-shi.html</id>
+    <published>2020-12-16T09:37:00.000Z</published>
+    <updated>2020-12-16T09:40:48.486Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;1、进入全屏&quot;&gt;&lt;a href=&quot;#1、进入全屏&quot; class=&quot;headerlink&quot; title=&quot;1、进入全屏&quot;&gt;&lt;/a&gt;1、进入全屏&lt;/h6&gt;&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="js" scheme="https://www.ding51.cn/categories/js/"/>
+    
+    
+      <category term="全屏" scheme="https://www.ding51.cn/tags/%E5%85%A8%E5%B1%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>迭代器(Iterator)和生成器(Generator)</title>
@@ -517,37 +543,9 @@
     </summary>
     
     
-      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
-    
       <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
     
-  </entry>
-  
-  <entry>
-    <title>input只能输入数字并限制长度</title>
-    <link href="https://www.ding51.cn/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html"/>
-    <id>https://www.ding51.cn/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html</id>
-    <published>2018-12-26T14:01:00.000Z</published>
-    <updated>2020-05-22T09:00:23.405Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h5 id=&quot;随笔记录&quot;&gt;&lt;a href=&quot;#随笔记录&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="html5" scheme="https://www.ding51.cn/categories/html5/"/>
-    
-    
-      <category term="htm5" scheme="https://www.ding51.cn/tags/htm5/"/>
-    
-      <category term="css" scheme="https://www.ding51.cn/tags/css/"/>
+      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   

@@ -5,9 +5,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="input只能输入数字并限制长度, Ding Zuke&#39;s blog">
-    <meta name="description" content="随笔记录情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式
-&amp;lt;input type=&amp;quot;text&amp;quot;  maxlength=&amp;quot;5&amp;quot; /&amp;gt;  效果ok，">
+    <meta name="keywords" content="js浏览器全屏模式, Ding Zuke&#39;s blog">
+    <meta name="description" content="1、进入全屏let docElm = document.documentElement;
+//W3C
+if(docElm.requestFullscreen) {
+    docElm.requestFullscreen();
+}
+
+//F">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>input只能输入数字并限制长度 | Ding Zuke&#39;s blog</title>
+    <title>js浏览器全屏模式 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +258,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        input只能输入数字并限制长度
+                        js浏览器全屏模式
                     </div>
                 </div>
             </div>
@@ -279,12 +284,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/htm5/" target="_blank">
-                    <span class="chip bg-color">htm5</span>
-                </a>
-                
-                <a href="/tags/css/" target="_blank">
-                    <span class="chip bg-color">css</span>
+                <a href="/tags/全屏/" target="_blank">
+                    <span class="chip bg-color">全屏</span>
                 </a>
                 
             </div>
@@ -294,38 +295,58 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/html5/" class="post-category" target="_blank">
-                        html5
+                    <a href="/categories/js/" class="post-category" target="_blank">
+                        js
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-26
+                    <i class="fa fa-clock-o fa-fw"></i>2020-12-16
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="随笔记录"><a href="#随笔记录" class="headerlink" title="随笔记录"></a>随笔记录</h5><p>情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式</p>
-<p><code>&lt;input type=&quot;text&quot;  maxlength=&quot;5&quot; /&gt;</code>  效果ok，当 <code>&lt;input type=&quot;number&quot;  maxlength=&quot;5&quot; /&gt;</code>时maxlength失效，长度可以无限输入 </p>
-<p>解决参考代码:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>style<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">/*在chrome下移除input[number]的上下箭头*/</span>
-
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>outer<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">,</span>
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>inner<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">{</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>appearance<span class="token punctuation">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
-    margin<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <h6 id="1、进入全屏"><a href="#1、进入全屏" class="headerlink" title="1、进入全屏"></a>1、进入全屏</h6><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> docElm <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//W3C</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>requestFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    docElm<span class="token punctuation">.</span><span class="token function">requestFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/*在firefox下移除input[number]的上下箭头*/</span>
-input<span class="token punctuation">[</span>type<span class="token operator">=</span><span class="token string">"number"</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token operator">-</span>moz<span class="token operator">-</span>appearance<span class="token punctuation">:</span>textfield<span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span>style<span class="token operator">></span>
 
-<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"number"</span> oninput<span class="token operator">=</span><span class="token string">"if(value.length>5)value=value.slice(0,5)"</span><span class="token operator">></span>
+<span class="token comment" spellcheck="true">//FireFox</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>mozRequestFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    docElm<span class="token punctuation">.</span><span class="token function">mozRequestFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//Chrome等</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>webkitRequestFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    docElm<span class="token punctuation">.</span><span class="token function">webkitRequestFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//IE11</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>msRequestFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    elem<span class="token punctuation">.</span><span class="token function">msRequestFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h6 id="2、退出全屏"><a href="#2、退出全屏" class="headerlink" title="2、退出全屏"></a>2、退出全屏</h6><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//W3C</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>exitFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">exitFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//FireFox</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>mozCancelFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">mozCancelFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//Chrome等</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>webkitCancelFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">webkitCancelFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//IE11</span>
+<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>msExitFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">msExitFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -465,7 +486,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html" class="b-link-green">input只能输入数字并限制长度</a>
+                    <a href="/js-liu-lan-qi-quan-ping-mo-shi.html" class="b-link-green">js浏览器全屏模式</a>
                 </p>
             </div>
         </div>
@@ -487,7 +508,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2018-12-26T22-01-00',
+        id: '2020-12-16T17-37-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -508,42 +529,48 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html">
+                <a href="/js-liu-lan-qi-quan-ping-mo-shi.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS如何优雅的写判断语句(一)">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="js浏览器全屏模式">
                         
-                        <span class="card-title">JS如何优雅的写判断语句(一)</span>
+                        <span class="card-title">js浏览器全屏模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.复杂判断优雅写法前言:js代码时经常遇到复杂逻辑判断的情况，通常大家可以用if/else或者switch来实现多个条件判断，但这样会有个问题，随着逻辑复杂度的增加，代码中的if/else/switch会变得越来越臃肿，越来越看不懂。
-1</div>
+                    <div class="summary">1、进入全屏let docElm = document.documentElement;
+//W3C
+if(docElm.requestFullscreen) {
+    docElm.requestFullscreen();
+}
+
+//F</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-16
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            丁祖科
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/js/" class="post-category" target="_blank">
+                                    js
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js优化/" target="_blank">
-                        <span class="chip bg-color">js优化</span>
-                    </a>
-                    
-                    <a href="/tags/map对象/" target="_blank">
-                        <span class="chip bg-color">map对象</span>
+                    <a href="/tags/全屏/" target="_blank">
+                        <span class="chip bg-color">全屏</span>
                     </a>
                     
                 </div>
@@ -555,35 +582,32 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/yun-suan.html">
+                <a href="/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="&& || 运算">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="迭代器(Iterator)和生成器(Generator)">
                         
-                        <span class="card-title">&& || 运算</span>
+                        <span class="card-title">迭代器(Iterator)和生成器(Generator)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1; // true 
-"0" // true 
-0; // false 
-false; // false 
-true; // true 
-"string"; // true 
-"" // false 
-null // false 
-NaN</div>
+                    <div class="summary">一、迭代器概念：
+迭代器是一个统一的接口，它的作用是使各种数据结构可被便捷的访问，它是通过一个键为Symbol.iterator 的方法来实现。
+迭代器是用于遍历数据结构元素的指针（如数据库中的游标）。
+
+实现过程：
+通过 Symbol.i</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-12-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js基础/" class="post-category" target="_blank">
-                                    js基础
+                            <a href="/categories/ES6/" class="post-category" target="_blank">
+                                    ES6
                                 </a>
                             
                             
@@ -593,12 +617,12 @@ NaN</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">&amp;&amp;</span>
+                    <a href="/tags/迭代器Iterator/" target="_blank">
+                        <span class="chip bg-color">迭代器Iterator</span>
                     </a>
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">||</span>
+                    <a href="/tags/生成器Generator/" target="_blank">
+                        <span class="chip bg-color">生成器Generator</span>
                     </a>
                     
                 </div>

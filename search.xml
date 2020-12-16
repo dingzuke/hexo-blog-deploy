@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>js浏览器全屏模式</title>
+      <link href="/js-liu-lan-qi-quan-ping-mo-shi.html"/>
+      <url>/js-liu-lan-qi-quan-ping-mo-shi.html</url>
+      
+        <content type="html"><![CDATA[<h6 id="1、进入全屏"><a href="#1、进入全屏" class="headerlink" title="1、进入全屏"></a>1、进入全屏</h6><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">let</span> docElm <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//W3C</span><span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>requestFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    docElm<span class="token punctuation">.</span><span class="token function">requestFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//FireFox</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>mozRequestFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    docElm<span class="token punctuation">.</span><span class="token function">mozRequestFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//Chrome等</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>docElm<span class="token punctuation">.</span>webkitRequestFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    docElm<span class="token punctuation">.</span><span class="token function">webkitRequestFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//IE11</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>elem<span class="token punctuation">.</span>msRequestFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    elem<span class="token punctuation">.</span><span class="token function">msRequestFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><h6 id="2、退出全屏"><a href="#2、退出全屏" class="headerlink" title="2、退出全屏"></a>2、退出全屏</h6><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//W3C</span><span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>exitFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    document<span class="token punctuation">.</span><span class="token function">exitFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//FireFox</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>mozCancelFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    document<span class="token punctuation">.</span><span class="token function">mozCancelFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//Chrome等</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>webkitCancelFullScreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    document<span class="token punctuation">.</span><span class="token function">webkitCancelFullScreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment" spellcheck="true">//IE11</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>msExitFullscreen<span class="token punctuation">)</span> <span class="token punctuation">{</span>    document<span class="token punctuation">.</span><span class="token function">msExitFullscreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> js </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 全屏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>迭代器(Iterator)和生成器(Generator)</title>
       <link href="/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html"/>
       <url>/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html</url>
@@ -442,9 +467,9 @@
       
         <tags>
             
-            <tag> map对象 </tag>
-            
             <tag> js优化 </tag>
+            
+            <tag> map对象 </tag>
             
         </tags>
       
