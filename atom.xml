@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2020-12-16T09:40:48.486Z</updated>
+  <updated>2021-02-18T06:21:09.359Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BFC和IFC</title>
+    <link href="https://www.ding51.cn/bfc.html"/>
+    <id>https://www.ding51.cn/bfc.html</id>
+    <published>2021-02-18T05:25:00.000Z</published>
+    <updated>2021-02-18T06:21:09.359Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h5 id=&quot;BFC概念&quot;&gt;&lt;a href=&quot;#BFC概念&quot; class=&quot;headerlink&quot; title=&quot;BFC概念&quot;&gt;&lt;/a&gt;BFC概念&lt;/h5&gt;&lt;p&gt;BFC 即 Block Formatting Contexts (块级格式化上下文)，具有 BFC
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BFC" scheme="https://www.ding51.cn/tags/BFC/"/>
+    
+      <category term="IFC" scheme="https://www.ding51.cn/tags/IFC/"/>
+    
+  </entry>
   
   <entry>
     <title>js浏览器全屏模式</title>
@@ -520,32 +546,6 @@
     
     
       <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS如何优雅的写判断语句(一)</title>
-    <link href="https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html"/>
-    <id>https://www.ding51.cn/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html</id>
-    <published>2019-01-20T17:25:00.000Z</published>
-    <updated>2020-05-22T09:00:23.404Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;一-复杂判断优雅写法&quot;&gt;&lt;a href=&quot;#一-复杂判断优雅写法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="js优化" scheme="https://www.ding51.cn/tags/js%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="map对象" scheme="https://www.ding51.cn/tags/map%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
