@@ -7,12 +7,13 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Nginx 搭建和配置, Ding Zuke&#39;s blog">
     <meta name="description" content="本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在搬瓦工租的,不多废话直接上干货
-环境：
-操作系统：CenOS 6 x86
-Nginx 版本：1.14.0
+
+一、Ubuntu环境：
+操作系统：Ubuntu 18.04.4
 
 
-Nginx搭建1.第一步 创建源配置在/etc/yum.repos.">
+Nginx搭建1.安装 nginxsudo apt update
+sudo ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -311,12 +312,86 @@ Nginx搭建1.第一步 创建源配置在/etc/yum.repos.">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在<a href="https://www.bwh8.net" target="_blank">搬瓦工</a>租的,不多废话直接上干货</p>
-<h6 id="环境："><a href="#环境：" class="headerlink" title="环境："></a>环境：</h6><ul>
+<hr>
+<h4 id="一、Ubuntu环境："><a href="#一、Ubuntu环境：" class="headerlink" title="一、Ubuntu环境："></a>一、Ubuntu环境：</h4><ul>
+<li>操作系统：Ubuntu 18.04.4</li>
+</ul>
+<hr>
+<h3 id="Nginx搭建"><a href="#Nginx搭建" class="headerlink" title="Nginx搭建"></a>Nginx搭建</h3><h5 id="1-安装-nginx"><a href="#1-安装-nginx" class="headerlink" title="1.安装 nginx"></a>1.安装 nginx</h5><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt update
+<span class="token function">sudo</span> apt <span class="token function">install</span> nginx
+nginx -v
+
+</code></pre>
+<h6 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h6><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 启动</span>
+<span class="token function">service</span> nginx start
+<span class="token comment" spellcheck="true"># 停止</span>
+<span class="token function">service</span> nginx stop
+<span class="token comment" spellcheck="true"># 重起</span>
+<span class="token function">service</span> nginx restart
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart nginx
+</code></pre>
+<p>nginx.conf 文件，路径为：/etc/nginx/nginx.conf<br>常规配置如下：</p>
+<pre class=" language-bash"><code class="language-bash">worker_processes  1<span class="token punctuation">;</span>
+events <span class="token punctuation">{</span>
+  worker_connections  1024<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+http <span class="token punctuation">{</span>
+  include   mime.types<span class="token punctuation">;</span>
+  default_type  application/octet-stream<span class="token punctuation">;</span>
+
+  sendfile  on<span class="token punctuation">;</span>
+  keepalive_timeout 65<span class="token punctuation">;</span>
+
+  <span class="token function">gzip</span>  on<span class="token punctuation">;</span>
+  gzip_vary on<span class="token punctuation">;</span>
+
+  gzip_comp_level 6<span class="token punctuation">;</span>
+  gzip_buffers 16 8k<span class="token punctuation">;</span>
+
+  gzip_min_length 1000<span class="token punctuation">;</span>
+  gzip_proxied any<span class="token punctuation">;</span>
+  gzip_disable <span class="token string">"msie6"</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">#gzip_http_version 1.0;</span>
+  gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript<span class="token punctuation">;</span>
+
+  server <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">#error_page 404 /404.html;</span>
+    error_page  500 502 503 504 /50x.html<span class="token punctuation">;</span>
+
+    location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+      root html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    listen 80<span class="token punctuation">;</span>
+    server_name localhost<span class="token punctuation">;</span>
+
+    location ~ .*\.<span class="token punctuation">(</span>css<span class="token operator">|</span>js<span class="token operator">|</span>swf<span class="token operator">|</span>html<span class="token operator">|</span>htm<span class="token operator">|</span>pdf<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>
+      root /var/www/html<span class="token punctuation">;</span>
+      autoindex on<span class="token punctuation">;</span>
+      index index.html index.htm<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    location / <span class="token punctuation">{</span>
+      charset utf-8<span class="token punctuation">;</span>
+      root  /var/www/html<span class="token punctuation">;</span>
+      index index.html index.htm<span class="token punctuation">;</span>
+      try_files <span class="token variable">$uri</span> /index.html<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>default 服务主机配置文件，路径为：/etc/nginx/sites-available/default</p>
+<p>默认页面index.html路径：     /var/www/html</p>
+<hr>
+<h4 id="二、CenOS环境："><a href="#二、CenOS环境：" class="headerlink" title="二、CenOS环境："></a>二、CenOS环境：</h4><ul>
 <li>操作系统：CenOS 6 x86</li>
 <li>Nginx 版本：1.14.0</li>
 </ul>
 <hr>
-<h3 id="Nginx搭建"><a href="#Nginx搭建" class="headerlink" title="Nginx搭建"></a>Nginx搭建</h3><h5 id="1-第一步-创建源配置"><a href="#1-第一步-创建源配置" class="headerlink" title="1.第一步 创建源配置"></a>1.第一步 创建源配置</h5><p>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo</p>
+<h3 id="Nginx搭建-1"><a href="#Nginx搭建-1" class="headerlink" title="Nginx搭建"></a>Nginx搭建</h3><h5 id="1-第一步-创建源配置"><a href="#1-第一步-创建源配置" class="headerlink" title="1.第一步 创建源配置"></a>1.第一步 创建源配置</h5><p>在/etc/yum.repos.d/目录下创建一个源配置文件nginx.repo</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /etc/yum.repos.d/
 vim nginx.repo
 </code></pre>
@@ -648,12 +723,13 @@ var foo = (a, b)=>{</div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">本文章适合新手,其中含有我在实际中遇到的问题解决分享,服务器在搬瓦工租的,不多废话直接上干货
-环境：
-操作系统：CenOS 6 x86
-Nginx 版本：1.14.0
+
+一、Ubuntu环境：
+操作系统：Ubuntu 18.04.4
 
 
-Nginx搭建1.第一步 创建源配置在/etc/yum.repos.</div>
+Nginx搭建1.安装 nginxsudo apt update
+sudo </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-21
