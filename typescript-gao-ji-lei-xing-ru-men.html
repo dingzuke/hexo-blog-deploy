@@ -373,7 +373,7 @@ function getSmallPet(): Fish | Bird {
 let pet = getSmallPet();
 pet.layEggs(); // okay
 pet.swim();    // errors  我们不能确定一个 Bird | Fish类型的变量是否有fly方法。 如果变量在运行时是 Fish类型，那么调用pet.fly()就出错了
-</code></pre><h5 id="3、泛型"><a href="#3、泛型" class="headerlink" title="3、泛型"></a>3、泛型</h5><p>可以使用泛型来创建可重用的组件，一个组件可以支持多种类型的数据。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型。</p>
+</code></pre><h5 id="3、泛型-lt-T-gt"><a href="#3、泛型-lt-T-gt" class="headerlink" title="3、泛型&lt;T&gt;"></a>3、泛型<code>&lt;T&gt;</code></h5><p>可以使用泛型来创建可重用的组件，一个组件可以支持多种类型的数据。组件不仅能够支持当前的数据类型，同时也能支持未来的数据类型。</p>
 <blockquote>
 <p>如何创建泛型类型:需要使用<strong>&lt;&gt;</strong> 并将 T(名称可自定义)作为参数传递。</p>
 </blockquote>
