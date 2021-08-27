@@ -346,12 +346,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 <p><font color="red">总结：</font><strong>对于Object.assign()而言，如果对象的属性值为简单类型（string，number），通过Object.assign({},srcobj);得到的新对象为深拷贝；如果属性值为对象或其他引用类型，那对于这个对象而言其实是浅拷贝的，这是Object.assign()特别需要注意的地方。</strong></p>
-<p><font color="red">补充：</font><code>Object.assign({},src1,src2);</code>对于src1和src2之间相同的属性是直接覆盖的，如果属性值为对象，是不会对对象直接的属性进行合并的。</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token punctuation">:</span> <span class="token punctuation">{</span>year<span class="token punctuation">:</span> <span class="token number">999</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
-<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token punctuation">:</span> <span class="token punctuation">{</span>year<span class="token punctuation">:</span> <span class="token number">2019</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
-Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>obj1<span class="token punctuation">,</span>obj2<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">// {age: {year: 999}}</span>
-</code></pre>
 <p>手写深拷贝：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">clone</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> target <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -546,50 +540,53 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/object-assign-shi-shen-kao-bei-huan-shi-qian-kao-bei.html">
+                <a href="/typescript-gao-ji-lei-xing-ru-men.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Object.assign()是深拷贝还是潜拷贝">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="TypeScript 高级类型">
                         
-                        <span class="card-title">Object.assign()是深拷贝还是潜拷贝</span>
+                        <span class="card-title">TypeScript 高级类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">定义Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象分配到目标对象。它将返回目标对象。🌰
-var obj = {};
-var o1 = { a: 1, b: 1 };
-var o2 = { b: 2 };
-v</div>
+                    <div class="summary">本文将介绍 
+
+交叉类型
+联合类型
+泛型&lt;T&gt;
+Partial
+Required
+Readonly
+Pick
+Omit
+映射类型
+
+1、交叉类型交叉类型是将多个类型合并为一个类型。把多种类型叠加到一起成为一种类型。PersonA</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/深拷贝/" class="post-category" target="_blank">
-                                    深拷贝
+                            <a href="/categories/TypeScript/" class="post-category" target="_blank">
+                                    TypeScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/深拷贝/" target="_blank">
-                        <span class="chip bg-color">深拷贝</span>
-                    </a>
-                    
-                    <a href="/tags/浅拷贝/" target="_blank">
-                        <span class="chip bg-color">浅拷贝</span>
+                    <a href="/tags/TypeScript/" target="_blank">
+                        <span class="chip bg-color">TypeScript</span>
                     </a>
                     
                 </div>

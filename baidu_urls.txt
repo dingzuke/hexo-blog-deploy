@@ -1,3 +1,4 @@
+https://www.ding51.cn/typescript-gao-ji-lei-xing-ru-men.html
 https://www.ding51.cn/object-assign-shi-shen-kao-bei-huan-shi-qian-kao-bei.html
 https://www.ding51.cn/bfc.html
 https://www.ding51.cn/js-liu-lan-qi-quan-ping-mo-shi.html
@@ -7,4 +8,3 @@ https://www.ding51.cn/he-zi-mo-xing-xing-nei-yuan-su-bian-ju-zhi-huan-yuan-su.ht
 https://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html
 https://www.ding51.cn/this-zhi-xiang-he-gou-zao-han-shu-you-return.html
 https://www.ding51.cn/yuan-xing-lian-ti-jie-xi.html
-https://www.ding51.cn/hui-liu-chong-hui.html

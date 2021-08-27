@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2021-08-04T07:59:13.420Z</updated>
+  <updated>2021-08-27T09:54:38.246Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>TypeScript 高级类型</title>
+    <link href="https://www.ding51.cn/typescript-gao-ji-lei-xing-ru-men.html"/>
+    <id>https://www.ding51.cn/typescript-gao-ji-lei-xing-ru-men.html</id>
+    <published>2021-08-26T08:48:00.000Z</published>
+    <updated>2021-08-27T09:54:38.246Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文将介绍
+        
+      
+    
+    </summary>
+    
+      <category term="TypeScript" scheme="https://www.ding51.cn/categories/TypeScript/"/>
+    
+    
+      <category term="TypeScript" scheme="https://www.ding51.cn/tags/TypeScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Object.assign()是深拷贝还是潜拷贝</title>
     <link href="https://www.ding51.cn/object-assign-shi-shen-kao-bei-huan-shi-qian-kao-bei.html"/>
     <id>https://www.ding51.cn/object-assign-shi-shen-kao-bei-huan-shi-qian-kao-bei.html</id>
     <published>2021-02-22T05:46:00.000Z</published>
-    <updated>2021-08-04T07:59:13.420Z</updated>
+    <updated>2021-08-18T07:52:18.587Z</updated>
     
     <summary type="html">
     
@@ -524,32 +550,6 @@
     
     
       <category term="node" scheme="https://www.ding51.cn/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何创建发布NPM包?</title>
-    <link href="https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html"/>
-    <id>https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html</id>
-    <published>2019-01-29T23:59:00.000Z</published>
-    <updated>2020-05-22T09:00:23.406Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h6 id=&quot;前言-平时我们都是使用的别人写好的npm包-npm-i-xxx-就直接安装好了使用-本文章介绍的是如何创建自己的封装好的npm包发布。&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="npm" scheme="https://www.ding51.cn/categories/npm/"/>
-    
-    
-      <category term="创建npm包" scheme="https://www.ding51.cn/tags/%E5%88%9B%E5%BB%BAnpm%E5%8C%85/"/>
     
   </entry>
   
