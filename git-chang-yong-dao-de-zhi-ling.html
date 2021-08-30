@@ -5,7 +5,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="git常用的指令, Ding Zuke&#39;s blog">
+    <meta name="keywords" content="git常用的指令和问题处理, Ding Zuke&#39;s blog">
     <meta name="description" content="开发时常用的指令1. github配置 ssh key配置cd  ~/.ssh 查看是否有id_rsa、id_rsa.pub文件，如果没有需要手动生成。
 ssh-keygen -t rsa -C &amp;quot;youremail@exampl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@ ssh-keygen -t rsa -C &amp;quot;youremail@exampl">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>git常用的指令 | Ding Zuke&#39;s blog</title>
+    <title>git常用的指令和问题处理 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +253,13 @@ ssh-keygen -t rsa -C &amp;quot;youremail@exampl">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        git常用的指令
+                        git常用的指令和问题处理
                     </div>
                 </div>
             </div>
@@ -347,6 +347,12 @@ $ git tag v1.0 &lt;commitID&gt; -m&quot;备注&quot; // 提交过的历史 打ta
 $ git push origin --tags
 </code></pre></li>
 </ul>
+<h4 id="开发应用中出现的问题-解决"><a href="#开发应用中出现的问题-解决" class="headerlink" title="开发应用中出现的问题 解决"></a>开发应用中出现的问题 解决</h4><h5 id="1、Failed-to-connect-to-github-com-port-443-connection-timed-out-或-fatal-unable-to-access-39-https-github-com-xxxx-39-gnutls-handshake-failed-The-TLS-connection-was-non-properly-terminated"><a href="#1、Failed-to-connect-to-github-com-port-443-connection-timed-out-或-fatal-unable-to-access-39-https-github-com-xxxx-39-gnutls-handshake-failed-The-TLS-connection-was-non-properly-terminated" class="headerlink" title="1、Failed to connect to github.com port 443:connection timed out 或 fatal: unable to access &#39;https://github.com/xxxx&#39;: gnutls_handshake() failed: The TLS connection was non-properly terminated"></a>1、<code>Failed to connect to github.com port 443:connection timed out</code> 或 <code>fatal: unable to access &#39;https://github.com/xxxx&#39;: gnutls_handshake() failed: The TLS connection was non-properly terminated</code></h5><p>由于代理设置有错，为 http 错误配置了 https 的代理，导致出错。<br>设置如下：</p>
+<pre class=" language-cmd"><code class="language-cmd">git config --global http.proxy http://127.0.0.1:1080
+git config --global http.proxy https://127.0.0.1:1080
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre>
 
             </div>
             <hr/>
@@ -485,7 +491,7 @@ $ git push origin --tags
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/git-chang-yong-dao-de-zhi-ling.html" class="b-link-green">git常用的指令</a>
+                    <a href="/git-chang-yong-dao-de-zhi-ling.html" class="b-link-green">git常用的指令和问题处理</a>
                 </p>
             </div>
         </div>

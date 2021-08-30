@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html</loc>
+    
+    <lastmod>2021-08-30T02:57:09.191Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.ding51.cn/typescript-gao-ji-lei-xing-ru-men.html</loc>
     
     <lastmod>2021-08-30T02:38:23.680Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://www.ding51.cn/nginx-da-jian-he-pei-zhi.html</loc>
     
     <lastmod>2021-07-28T10:01:56.117Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html</loc>
-    
-    <lastmod>2021-03-01T09:29:41.959Z</lastmod>
     
   </url>
   
@@ -149,13 +149,6 @@
   </url>
   
   <url>
-    <loc>https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html</loc>
-    
-    <lastmod>2020-05-22T09:00:23.406Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.ding51.cn/web-view-react-zhong-jssdk.html</loc>
     
     <lastmod>2020-05-22T09:00:23.406Z</lastmod>
@@ -164,6 +157,13 @@
   
   <url>
     <loc>https://www.ding51.cn/shu-zu-zhong-de-mou-dui-xiang-pai-xu.html</loc>
+    
+    <lastmod>2020-05-22T09:00:23.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.ding51.cn/chuang-jian-fa-bu-npm-bao.html</loc>
     
     <lastmod>2020-05-22T09:00:23.406Z</lastmod>
     
