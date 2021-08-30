@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2021-08-30T09:00:29.416Z</updated>
+  <updated>2021-08-30T09:20:01.976Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>ubuntu系统Nginx、Docker等安装</title>
     <link href="https://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html"/>
     <id>https://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html</id>
-    <published>2021-08-30T07:35:14.000Z</published>
-    <updated>2021-08-30T09:00:29.416Z</updated>
+    <published>2021-08-30T07:35:00.000Z</published>
+    <updated>2021-08-30T09:20:01.976Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,18 @@
     
     </summary>
     
+      <category term="ubuntu" scheme="https://www.ding51.cn/categories/ubuntu/"/>
+    
+      <category term="服务器" scheme="https://www.ding51.cn/categories/ubuntu/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="docker" scheme="https://www.ding51.cn/tags/docker/"/>
+    
+      <category term="nginx" scheme="https://www.ding51.cn/tags/nginx/"/>
+    
+      <category term="node安装" scheme="https://www.ding51.cn/tags/node%E5%AE%89%E8%A3%85/"/>
+    
+      <category term="jenkins" scheme="https://www.ding51.cn/tags/jenkins/"/>
     
   </entry>
   
