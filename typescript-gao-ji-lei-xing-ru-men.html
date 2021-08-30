@@ -419,6 +419,7 @@ pet.swim();    // errors  我们不能确定一个 Bird | Fish类型的变量是
 
 <span class="token function">showTypeTwo</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token string">'001'</span><span class="token punctuation">,</span> name<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'This'</span><span class="token punctuation">,</span> <span class="token string">'is'</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'Test'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Output: {id: "001", name: Array["This", "is", "a", "Test"]}</span>
+
 </code></pre>
 <h5 id="4、Partial"><a href="#4、Partial" class="headerlink" title="4、Partial"></a>4、Partial</h5><p>Partial 允许你将T类型的所有属性设为可选,它将在每一个字段后面添加一个?。</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">interface</span> <span class="token class-name">PartialType</span> <span class="token punctuation">{</span>
@@ -441,6 +442,7 @@ interface PartialType {
 
 <span class="token function">showType</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">// Output: {id: 1}</span>
+
 </code></pre>
 <h5 id="5、Required"><a href="#5、Required" class="headerlink" title="5、Required"></a>5、Required</h5><p>将某个类型里的属性全部变为必选项</p>
 <blockquote>
