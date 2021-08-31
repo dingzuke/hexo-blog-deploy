@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="input只能输入数字并限制长度, Ding Zuke&#39;s blog">
-    <meta name="description" content="随笔记录情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式
-&amp;lt;input type=&amp;quot;text&amp;quot;  maxlength=&amp;quot;5&amp;quot; /&amp;gt;  效果ok，">
+    <meta name="keywords" content="linux常用命令, Ding Zuke&#39;s blog">
+    <meta name="description" content="基本命令1.目录查看 ls [-al]命令：ls [-al]
+ls                查看当前目录下的所有目录和文件
+ls -a            查看当前目录下的所有目录和文件（包括隐藏的文件）
+ls -l 或 ll   ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>input只能输入数字并限制长度 | Ding Zuke&#39;s blog</title>
+    <title>linux常用命令 | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +255,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        input只能输入数字并限制长度
+                        linux常用命令
                     </div>
                 </div>
             </div>
@@ -279,12 +281,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/htm5/" target="_blank">
-                    <span class="chip bg-color">htm5</span>
-                </a>
-                
-                <a href="/tags/css/" target="_blank">
-                    <span class="chip bg-color">css</span>
+                <a href="/tags/linux命令/" target="_blank">
+                    <span class="chip bg-color">linux命令</span>
                 </a>
                 
             </div>
@@ -294,40 +292,158 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/html5/" class="post-category" target="_blank">
-                        html5
+                    <a href="/categories/linux/" class="post-category" target="_blank">
+                        linux
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-26
+                    <i class="fa fa-clock-o fa-fw"></i>2021-08-31
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="随笔记录"><a href="#随笔记录" class="headerlink" title="随笔记录"></a>随笔记录</h5><p>情景:要求只能输入数字,且限制长度,在谷歌浏览器移除input[number]的上下箭头样式</p>
-<p><code>&lt;input type=&quot;text&quot;  maxlength=&quot;5&quot; /&gt;</code>  效果ok，当 <code>&lt;input type=&quot;number&quot;  maxlength=&quot;5&quot; /&gt;</code>时maxlength失效，长度可以无限输入 </p>
-<p>解决参考代码:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>style<span class="token operator">></span>
+                <h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><h4 id="1-目录查看-ls-al"><a href="#1-目录查看-ls-al" class="headerlink" title="1.目录查看 ls [-al]"></a>1.目录查看 ls [-al]</h4><p>命令：ls [-al]</p>
+<pre><code>ls                查看当前目录下的所有目录和文件
+ls -a            查看当前目录下的所有目录和文件（包括隐藏的文件）
+ls -l 或 ll       列表查看当前目录下的所有目录和文件（列表查看，显示更多信息）
+</code></pre><h4 id="2-文件夹操作【增-mkdir，删-rm，改-mv，查-find】"><a href="#2-文件夹操作【增-mkdir，删-rm，改-mv，查-find】" class="headerlink" title="2.文件夹操作【增-mkdir，删-rm，改-mv，查-find】"></a>2.文件夹操作【增-mkdir，删-rm，改-mv，查-find】</h4><h5 id="2-1-创建文件夹【增】-mkdir"><a href="#2-1-创建文件夹【增】-mkdir" class="headerlink" title="2.1 创建文件夹【增】 mkdir"></a>2.1 创建文件夹【增】 mkdir</h5><p>命令：mkdir 目录</p>
+<pre><code>mkdir    aaa            在当前目录下创建一个名为aaa的目录
+mkdir    /usr/aaa    在指定目录下创建一个名为aaa的目录
+</code></pre><h5 id="2-2-删除目录或文件夹【删】rm"><a href="#2-2-删除目录或文件夹【删】rm" class="headerlink" title="2.2 删除目录或文件夹【删】rm"></a>2.2 删除目录或文件夹【删】rm</h5><p>命令：rm [-rf] 目录</p>
+<pre><code>删除文件：
+rm 文件        删除当前目录下的文件
+rm -f 文件    删除当前目录的的文件（不询问）
 
-<span class="token comment" spellcheck="true">/*在chrome下移除input[number]的上下箭头*/</span>
+删除目录：
+rm -r aaa    递归删除当前目录下的aaa目录
+rm -rf aaa    递归删除当前目录下的aaa目录（不询问）
+</code></pre><h5 id="2-3-文件夹修改【改】mv-和-cp"><a href="#2-3-文件夹修改【改】mv-和-cp" class="headerlink" title="2.3 文件夹修改【改】mv 和 cp"></a>2.3 文件夹修改【改】mv 和 cp</h5><pre><code>一、重命名目录
+    命令：mv 当前目录  新目录
+    例如：mv aaa bbb    将目录aaa改为bbb
 
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>outer<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">,</span>
-input<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>inner<span class="token operator">-</span>spin<span class="token operator">-</span>button<span class="token punctuation">{</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>appearance<span class="token punctuation">:</span> none <span class="token operator">!</span>important<span class="token punctuation">;</span>
-    margin<span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token comment" spellcheck="true">/*在firefox下移除input[number]的上下箭头*/</span>
-input<span class="token punctuation">[</span>type<span class="token operator">=</span><span class="token string">"number"</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token operator">-</span>moz<span class="token operator">-</span>appearance<span class="token punctuation">:</span>textfield<span class="token punctuation">;</span><span class="token punctuation">}</span>
-<span class="token operator">&lt;</span>style<span class="token operator">></span>
+二、剪切目录
+    命令：mv 目录名称 目录的新位置
+    示例：将/usr/tmp目录下的aaa目录剪切到 /usr目录下面     mv /usr/tmp/aaa /usr
+    注意：mv语法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作
 
-<span class="token operator">&lt;</span>input type<span class="token operator">=</span><span class="token string">"number"</span> oninput<span class="token operator">=</span><span class="token string">"if(value.length>5)value=value.slice(0,5)"</span><span class="token operator">></span>
+三、拷贝目录
+    命令：cp -r 目录名称 目录拷贝的目标位置   -r代表递归
+    示例：将/usr/tmp目录下的aaa目录复制到 /usr目录下面     cp /usr/tmp/aaa  /usr
+</code></pre><h5 id="2-4-搜索目录【查】find"><a href="#2-4-搜索目录【查】find" class="headerlink" title="2.4 搜索目录【查】find"></a>2.4 搜索目录【查】find</h5><p>命令：find 目录 参数 文件名称<br>示例：find /usr/tmp -name ‘a*’    查找/usr/tmp目录下的所有以a开头的目录或文件</p>
+<h4 id="3-文件操作【增-touch，删-rm，改-vim，查-cat】"><a href="#3-文件操作【增-touch，删-rm，改-vim，查-cat】" class="headerlink" title="3. 文件操作【增-touch，删-rm，改-vim，查-cat】"></a>3. 文件操作【增-touch，删-rm，改-vim，查-cat】</h4><h5 id="3-1-新建文件【增】touch"><a href="#3-1-新建文件【增】touch" class="headerlink" title="3.1 新建文件【增】touch"></a>3.1 新建文件【增】touch</h5><p>命令：touch 文件名</p>
+<p>示例：在当前目录创建一个名为aa.txt的文件        touch  aa.txt</p>
+<h5 id="3-2-删除文件-【删】-rm"><a href="#3-2-删除文件-【删】-rm" class="headerlink" title="3.2 删除文件 【删】 rm"></a>3.2 删除文件 【删】 rm</h5><p>命令：rm -rf 文件名</p>
+<h5 id="3-3-修改文件【改】-vi或vim"><a href="#3-3-修改文件【改】-vi或vim" class="headerlink" title="3.3 修改文件【改】 vi或vim"></a>3.3 修改文件【改】 vi或vim</h5><p>命令： vim 文件名</p>
+<p>1) 命令行模式command mode）<br>      命令行模式下的常用命令：<br>      【1】控制光标移动：↑，↓，j<br>      【2】删除当前行：dd<br>      【3】查找：/字符<br>      【4】进入编辑模式：i o a<br>      【5】进入底行模式：:</p>
+<p>2) 编辑模式（Insert mode）<br>      按 i进入<br>     【1】ESC 退出编辑模式到命令行模式；</p>
+<p>3) 底行模式（last line mode）<br>     【1】退出编辑：   :q<br>     【2】强制退出：   :q!<br>     【3】保存并退出：  :wq</p>
+<h5 id="3-4-文件的查看【查】"><a href="#3-4-文件的查看【查】" class="headerlink" title="3.4 文件的查看【查】"></a>3.4 文件的查看【查】</h5><h6 id="cat：看最后一屏"><a href="#cat：看最后一屏" class="headerlink" title="cat：看最后一屏"></a>cat：看最后一屏</h6><p>示例：使用cat查看/etc/sudo.conf文件，只能显示最后一屏内容<br>cat sudo.conf</p>
+<h6 id="more：百分比显示"><a href="#more：百分比显示" class="headerlink" title="more：百分比显示"></a>more：百分比显示</h6><p>示例：使用more查看/etc/sudo.conf文件，可以显示百分比，回车可以向下一行，空格可以向下一页，q可以退出查看<br>more sudo.conf</p>
+<h6 id="less：翻页查看"><a href="#less：翻页查看" class="headerlink" title="less：翻页查看"></a>less：翻页查看</h6><p>示例：使用less查看/etc/sudo.conf文件，可以使用键盘上的PgUp和PgDn向上    和向下翻页，q结束查看<br>less sudo.conf</p>
+<h6 id="tail：指定行数或者动态查看"><a href="#tail：指定行数或者动态查看" class="headerlink" title="tail：指定行数或者动态查看"></a>tail：指定行数或者动态查看</h6><p>示例：使用tail -10 查看/etc/sudo.conf文件的后10行，Ctrl+C结束<br>tail -10 sudo.conf</p>
+<h4 id="4-权限修改"><a href="#4-权限修改" class="headerlink" title="4. 权限修改"></a>4. 权限修改</h4><pre><code>chmod +x aaa.txt
+chmod 777 aaa.txt
+chmod rwx aaa.txt
+</code></pre><h4 id="5-打包解压"><a href="#5-打包解压" class="headerlink" title="5. 打包解压"></a>5. 打包解压</h4><h5 id="5-1-打包命令：tar-zcvf-打包压缩后的文件名-tar-要打包的文件"><a href="#5-1-打包命令：tar-zcvf-打包压缩后的文件名-tar-要打包的文件" class="headerlink" title="5.1 打包命令：tar -zcvf 打包压缩后的文件名.tar  要打包的文件"></a>5.1 打包命令：tar -zcvf 打包压缩后的文件名.tar  要打包的文件</h5><h5 id="5-2-解压命令：-tar-xvf-ab-tar"><a href="#5-2-解压命令：-tar-xvf-ab-tar" class="headerlink" title="5.2 解压命令： tar -xvf ab.tar"></a>5.2 解压命令： tar -xvf ab.tar</h5><h4 id="6-查找命令"><a href="#6-查找命令" class="headerlink" title="6. 查找命令"></a>6. 查找命令</h4><h5 id="6-1-grep"><a href="#6-1-grep" class="headerlink" title="6.1 grep"></a>6.1 grep</h5><p>grep命令是一种强大的文本搜索工具</p>
+<pre><code>ps -ef | grep sshd  查找指定ssh服务进程 
+ps -ef | grep sshd | grep -v grep 查找指定服务进程，排除gerp身 
+ps -ef | grep sshd -c 查找指定进程个数 
+</code></pre><h5 id="6-2-find"><a href="#6-2-find" class="headerlink" title="6.2 find"></a>6.2 find</h5><p>find命令在目录结构中搜索文件，并对搜索结果执行指定的操作。 </p>
+<pre><code>find . -name &quot;*.log&quot; -ls  在当前目录查找以.log结尾的文件，并显示详细信息。 
+find /root/ -perm 600   查找/root/目录下权限为600的文件 
+find . -type f -name &quot;*.log&quot;  查找当目录，以.log结尾的普通文件 
+find . -type d | sort   查找当前所有目录并排序 
+find . -size +100M  查找当前目录大于100M的文件
+</code></pre><h5 id="6-3-whereis"><a href="#6-3-whereis" class="headerlink" title="6.3 whereis"></a>6.3 whereis</h5><p>whereis命令是定位可执行文件、源代码文件、帮助文件在文件系统中的位置。这些文件的属性应属于原始代码，二进制文件，或是帮助文件。</p>
+<pre><code>whereis nginx    将和nginx文件相关的文件都查找出来
+</code></pre><h5 id="6-4-which"><a href="#6-4-which" class="headerlink" title="6.4 which"></a>6.4 which</h5><p>which命令的作用是在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。</p>
+<pre><code>which docker  查找docker命令所在路径 
+which java  查找path中java的路径
+</code></pre><h4 id="7-su、sudo"><a href="#7-su、sudo" class="headerlink" title="7. su、sudo"></a>7. su、sudo</h4><h5 id="7-1-su"><a href="#7-1-su" class="headerlink" title="7.1 su"></a>7.1 su</h5><p>su用于用户之间的切换。但是切换前的用户依然保持登录状态。如果是root 向普通或虚拟用户切换不需要密码，反之普通用户切换到其它任何用户都需要密码验证。</p>
+<pre><code>su test:切换到test用户，但是路径还是/root目录
+su - test : 切换到test用户，路径变成了/home/test
+su : 切换到root用户，但是路径还是原来的路径
+su - : 切换到root用户，并且路径是/root
+su不足：如果某个用户需要使用root权限、则必须要把root密码告诉此用户。
+退出返回之前的用户：exit
+</code></pre><h5 id="7-2-sudo"><a href="#7-2-sudo" class="headerlink" title="7.2 sudo"></a>7.2 sudo</h5><p>sudo是为所有想使用root权限的普通用户设计的。可以让普通用户具有临时使用root权限的权利。只需输入自己账户的密码即可。</p>
+<h4 id="8-系统服务"><a href="#8-系统服务" class="headerlink" title="8. 系统服务"></a>8. 系统服务</h4><pre><code>service nginx status  --查看nginx服务的状态
+service nginx start  --开启nginx服务
+service nginx stop  --停止nginx服务
+service nginx restart  --重启nginx服务
+
+chkconfig nginx off  --关闭nginx服务的开机自启动
+chkconfig nginx on  --开启nginx服务的开机自启动
+</code></pre><h4 id="9-定时任务指令crontab-配置"><a href="#9-定时任务指令crontab-配置" class="headerlink" title="9. 定时任务指令crontab 配置"></a>9. 定时任务指令crontab 配置</h4><pre><code>安装
+yum install crontabs
+服务操作说明：
+service crond start   ## 启动服务 
+service crond stop    ## 关闭服务 
+service crond restart ## 重启服务
+</code></pre><p>配置说明、实例<br>命令：<code>*   *    *   *   *   command</code></p>
+<p>解释：<code>分  时  日  月  周  命令</code></p>
+<p>第1列表示分钟1～59 每分钟用<em>或者 </em>/1表示    </p>
+<p>第2列表示小时0～23（0表示0点）</p>
+<p>第3列表示日期1～31  </p>
+<p>第4列表示月份1～12  </p>
+<p>第5列标识号星期0～6（0表示星期天）  </p>
+<p>第6列要运行的命令</p>
+<p>配置实例：</p>
+<pre><code>先打开定时任务所在的文件：
+crontab -e
+
+每分钟执行一次date命令 
+*/1 * * * * date &gt;&gt; /root/date.txt
+
+每晚的21:30重启apache。 
+30 21 * * * service httpd restart
+
+每月1、10、22日的4 : 45重启apache。  
+45 4 1,10,22 * * service httpd restart
+
+每周六、周日的1 : 10重启apache。 
+10 1 * * 6,0 service httpd restart
+
+每天18 : 00至23 : 00之间每隔30分钟重启apache。
+0,30   18-23    *   *   *   service httpd restart
+晚上11点到早上7点之间，每隔一小时重启apache
+*  23-7/1    *   *   *   service httpd restart
+</code></pre><h4 id="10-其他命令"><a href="#10-其他命令" class="headerlink" title="10. 其他命令"></a>10. 其他命令</h4><h5 id="10-1-查看当前目录：pwd"><a href="#10-1-查看当前目录：pwd" class="headerlink" title="10.1 查看当前目录：pwd"></a>10.1 查看当前目录：pwd</h5><pre><code>命令：pwd     查看当前目录路径
+</code></pre><h5 id="10-2-查看进程：ps-ef"><a href="#10-2-查看进程：ps-ef" class="headerlink" title="10.2 查看进程：ps -ef"></a>10.2 查看进程：ps -ef</h5><p>命令：ps -ef    查看所有正在运行的进程</p>
+<h6 id="10-3-结束进程：kill"><a href="#10-3-结束进程：kill" class="headerlink" title="10.3 结束进程：kill"></a>10.3 结束进程：kill</h6><pre><code>命令：kill pid 或者 kill -9 pid(强制杀死进程)           pid:进程号
+</code></pre><h5 id="10-4-网络通信命令："><a href="#10-4-网络通信命令：" class="headerlink" title="10.4 网络通信命令："></a>10.4 网络通信命令：</h5><p>ifconfig：查看网卡信息</p>
+<pre><code>命令：ifconfig 或 ifconfig | more
+</code></pre><p>ping：查看与某台机器的连接情况</p>
+<pre><code>命令：ping ip
+</code></pre><p>netstat -an：查看当前系统端口</p>
+<pre><code>命令：netstat -an
+</code></pre><p>搜索指定端口</p>
+<pre><code>命令：netstat -an | grep 8080
+</code></pre><h5 id="10-5-关闭防火墙"><a href="#10-5-关闭防火墙" class="headerlink" title="10.5 关闭防火墙"></a>10.5 关闭防火墙</h5><pre><code>命令：chkconfig iptables off
+
+或者：
+
+ iptables -L;
+ iptables -F;
+ service iptables stop
+</code></pre><h6 id="10-6-清屏"><a href="#10-6-清屏" class="headerlink" title="10.6 清屏"></a>10.6 清屏</h6><pre><code>命令：clear
+</code></pre><h5 id="10-11-vi模式下快捷键"><a href="#10-11-vi模式下快捷键" class="headerlink" title="10.11 vi模式下快捷键"></a>10.11 vi模式下快捷键</h5><pre><code>esc后:
+
+保存并退出快捷键：shift+z+z
+
+光标跳到最后一行快捷键：shift+g
+
+删除一行：dd
+
+复制一行内容：y+y
+
+粘贴复制的内容：p
 </code></pre>
-
             </div>
             <hr/>
 
@@ -465,7 +581,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/input-zhi-neng-shu-ru-shu-zi-bing-xian-zhi-chang-du.html" class="b-link-green">input只能输入数字并限制长度</a>
+                    <a href="/linux-chang-yong-ming-ling.html" class="b-link-green">linux常用命令</a>
                 </p>
             </div>
         </div>
@@ -487,7 +603,7 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2018-12-26T22-01-00',
+        id: '2021-08-31T14-23-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -508,42 +624,45 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/js-ru-he-you-ya-de-xie-pan-duan-yu-ju.html">
+                <a href="/linux-chang-yong-ming-ling.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JS如何优雅的写判断语句(一)">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="linux常用命令">
                         
-                        <span class="card-title">JS如何优雅的写判断语句(一)</span>
+                        <span class="card-title">linux常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">一.复杂判断优雅写法前言:js代码时经常遇到复杂逻辑判断的情况，通常大家可以用if/else或者switch来实现多个条件判断，但这样会有个问题，随着逻辑复杂度的增加，代码中的if/else/switch会变得越来越臃肿，越来越看不懂。
-1</div>
+                    <div class="summary">基本命令1.目录查看 ls [-al]命令：ls [-al]
+ls                查看当前目录下的所有目录和文件
+ls -a            查看当前目录下的所有目录和文件（包括隐藏的文件）
+ls -l 或 ll   </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-31
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            丁祖科
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/map对象/" target="_blank">
-                        <span class="chip bg-color">map对象</span>
-                    </a>
-                    
-                    <a href="/tags/js优化/" target="_blank">
-                        <span class="chip bg-color">js优化</span>
+                    <a href="/tags/linux命令/" target="_blank">
+                        <span class="chip bg-color">linux命令</span>
                     </a>
                     
                 </div>
@@ -555,35 +674,38 @@ input<span class="token punctuation">[</span>type<span class="token operator">=<
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/yun-suan.html">
+                <a href="/liunx-chang-jian-zhi-ling-nginx-docker-deng.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="&& || 运算">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ubuntu系统Nginx、Docker等安装">
                         
-                        <span class="card-title">&& || 运算</span>
+                        <span class="card-title">ubuntu系统Nginx、Docker等安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1; // true 
-"0" // true 
-0; // false 
-false; // false 
-true; // true 
-"string"; // true 
-"" // false 
-null // false 
-NaN</div>
+                    <div class="summary">Nginx 安装及使用// 安装
+sudo apt update
+sudo apt install nginx
+nginx -v
+// 相关命令
+service nginx start
+service nginx stop
+service </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/js基础/" class="post-category" target="_blank">
-                                    js基础
+                            <a href="/categories/ubuntu/" class="post-category" target="_blank">
+                                    ubuntu
+                                </a>
+                            
+                            <a href="/categories/ubuntu/服务器/" class="post-category" target="_blank">
+                                    服务器
                                 </a>
                             
                             
@@ -593,16 +715,20 @@ NaN</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">&amp;&amp;</span>
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
-                    <a href="/tags/" target="_blank">
-                        <span class="chip bg-color">||</span>
+                    <a href="/tags/nginx/" target="_blank">
+                        <span class="chip bg-color">nginx</span>
                     </a>
                     
-                    <a href="/tags/运算符/" target="_blank">
-                        <span class="chip bg-color">运算符</span>
+                    <a href="/tags/node安装/" target="_blank">
+                        <span class="chip bg-color">node安装</span>
+                    </a>
+                    
+                    <a href="/tags/jenkins/" target="_blank">
+                        <span class="chip bg-color">jenkins</span>
                     </a>
                     
                 </div>
