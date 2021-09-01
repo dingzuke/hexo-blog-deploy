@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2021-08-31T08:38:08.150Z</updated>
+  <updated>2021-09-01T01:59:02.307Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title> docker常用命令操作</title>
+    <link href="https://www.ding51.cn/docker-chang-yong-ming-ling-cao-zuo.html"/>
+    <id>https://www.ding51.cn/docker-chang-yong-ming-ling-cao-zuo.html</id>
+    <published>2021-08-31T09:08:00.000Z</published>
+    <updated>2021-09-01T01:59:02.307Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;docker相关安装见 &lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://www.ding51.cn/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://www.ding51.cn/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux常用命令</title>
     <link href="https://www.ding51.cn/linux-chang-yong-ming-ling.html"/>
     <id>https://www.ding51.cn/linux-chang-yong-ming-ling.html</id>
     <published>2021-08-31T06:23:00.000Z</published>
-    <updated>2021-08-31T08:38:08.150Z</updated>
+    <updated>2021-08-31T09:41:20.859Z</updated>
     
     <summary type="html">
     
@@ -47,7 +73,7 @@
     <link href="https://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html"/>
     <id>https://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html</id>
     <published>2021-08-30T07:35:00.000Z</published>
-    <updated>2021-08-30T09:34:08.869Z</updated>
+    <updated>2021-08-31T09:04:15.090Z</updated>
     
     <summary type="html">
     
@@ -55,7 +81,8 @@
       
         
         
-          &lt;h3 id=&quot;Nginx-安装及使用&quot;&gt;&lt;a href=&quot;#Nginx-安装及使用&quot; class=&quot;headerlink&quot; title=&quot;Nginx 安装及使用&quot;&gt;&lt;/a&gt;Nginx 安装及使用&lt;/h3&gt;&lt;pre class=&quot; language-bash&quot;&gt;&lt;code
+          &lt;p&gt;主要介绍 基于ubuntu系统下的 Nginx，docker，node，jenkins安装&lt;/p&gt;
+&lt;h3 id=&quot;1、Nginx-安装及使用&quot;&gt;&lt;a href=&quot;#1、Nginx-安装及使用&quot; class=&quot;headerlink&quot; title=&quot;1、Nginx
         
       
     
@@ -531,32 +558,6 @@
       <category term="JSSDK" scheme="https://www.ding51.cn/tags/JSSDK/"/>
     
       <category term="小程序" scheme="https://www.ding51.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git常用的指令和问题处理</title>
-    <link href="https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html"/>
-    <id>https://www.ding51.cn/git-chang-yong-dao-de-zhi-ling.html</id>
-    <published>2019-03-27T18:44:00.000Z</published>
-    <updated>2021-08-30T09:52:24.030Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h4 id=&quot;一、开发时常用的指令&quot;&gt;&lt;a href=&quot;#一、开发时常用的指令&quot; class=&quot;headerlink&quot; title=&quot;一、开发时常用的指令&quot;&gt;&lt;/a&gt;一、开发时常用的指令&lt;/h4&gt;&lt;h6 id=&quot;1-github配置-ssh-key配置&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="git" scheme="https://www.ding51.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="https://www.ding51.cn/tags/git/"/>
     
   </entry>
   
