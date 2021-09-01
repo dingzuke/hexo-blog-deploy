@@ -348,6 +348,7 @@ rm -rf aaa    递归删除当前目录下的aaa目录（不询问）
 <h6 id="tail：指定行数或者动态查看"><a href="#tail：指定行数或者动态查看" class="headerlink" title="tail：指定行数或者动态查看"></a>tail：指定行数或者动态查看</h6><p>示例：使用tail -10 查看/etc/sudo.conf文件的后10行，Ctrl+C结束<br>tail -10 sudo.conf</p>
 <h4 id="4-权限修改"><a href="#4-权限修改" class="headerlink" title="4. 权限修改"></a>4. 权限修改</h4><pre><code>chmod +x aaa.txt
 chmod 777 aaa.txt
+chmod -R 777 aaa  // 所有档案与子目录进行相同的权限变更(即以递回的方式逐个变更)
 chmod rwx aaa.txt
 </code></pre><h4 id="5-打包解压"><a href="#5-打包解压" class="headerlink" title="5. 打包解压"></a>5. 打包解压</h4><h5 id="5-1-打包命令：tar-zcvf-打包压缩后的文件名-tar-要打包的文件"><a href="#5-1-打包命令：tar-zcvf-打包压缩后的文件名-tar-要打包的文件" class="headerlink" title="5.1 打包命令：tar -zcvf 打包压缩后的文件名.tar  要打包的文件"></a>5.1 打包命令：tar -zcvf 打包压缩后的文件名.tar  要打包的文件</h5><h5 id="5-2-解压命令：-tar-xvf-ab-tar"><a href="#5-2-解压命令：-tar-xvf-ab-tar" class="headerlink" title="5.2 解压命令： tar -xvf ab.tar"></a>5.2 解压命令： tar -xvf ab.tar</h5><h4 id="6-查找命令"><a href="#6-查找命令" class="headerlink" title="6. 查找命令"></a>6. 查找命令</h4><h5 id="6-1-grep"><a href="#6-1-grep" class="headerlink" title="6.1 grep"></a>6.1 grep</h5><p>grep命令是一种强大的文本搜索工具</p>
 <pre><code>ps -ef | grep sshd  查找指定ssh服务进程 
@@ -444,6 +445,7 @@ crontab -e
 
 粘贴复制的内容：p
 </code></pre><h6 id="10-8-显卡查看"><a href="#10-8-显卡查看" class="headerlink" title="10.8 显卡查看"></a>10.8 显卡查看</h6><pre><code>nvidia-smi
+</code></pre><h6 id="10-9-查看存储"><a href="#10-9-查看存储" class="headerlink" title="10.9 查看存储"></a>10.9 查看存储</h6><pre><code>df
 </code></pre>
             </div>
             <hr/>
@@ -632,9 +634,9 @@ crontab -e
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt=" docker常用命令操作">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt=" docker常用操作和配置">
                         
-                        <span class="card-title"> docker常用命令操作</span>
+                        <span class="card-title"> docker常用操作和配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
