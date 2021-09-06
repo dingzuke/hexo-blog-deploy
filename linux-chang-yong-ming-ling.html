@@ -345,7 +345,7 @@ rm -rf aaa    递归删除当前目录下的aaa目录（不询问）
 <h5 id="3-4-文件的查看【查】"><a href="#3-4-文件的查看【查】" class="headerlink" title="3.4 文件的查看【查】"></a>3.4 文件的查看【查】</h5><h6 id="cat：看最后一屏"><a href="#cat：看最后一屏" class="headerlink" title="cat：看最后一屏"></a>cat：看最后一屏</h6><p>示例：使用cat查看/etc/sudo.conf文件，只能显示最后一屏内容<br>cat sudo.conf</p>
 <h6 id="more：百分比显示"><a href="#more：百分比显示" class="headerlink" title="more：百分比显示"></a>more：百分比显示</h6><p>示例：使用more查看/etc/sudo.conf文件，可以显示百分比，回车可以向下一行，空格可以向下一页，q可以退出查看<br>more sudo.conf</p>
 <h6 id="less：翻页查看"><a href="#less：翻页查看" class="headerlink" title="less：翻页查看"></a>less：翻页查看</h6><p>示例：使用less查看/etc/sudo.conf文件，可以使用键盘上的PgUp和PgDn向上    和向下翻页，q结束查看<br>less sudo.conf</p>
-<h6 id="tail：指定行数或者动态查看"><a href="#tail：指定行数或者动态查看" class="headerlink" title="tail：指定行数或者动态查看"></a>tail：指定行数或者动态查看</h6><p>示例：使用tail -10 查看/etc/sudo.conf文件的后10行，Ctrl+C结束<br>tail -10 sudo.conf</p>
+<h6 id="tail：指定行数或者动态查看"><a href="#tail：指定行数或者动态查看" class="headerlink" title="tail：指定行数或者动态查看"></a>tail：指定行数或者动态查看</h6><p>示例：使用tail -10 查看/etc/sudo.conf文件的后10行。<br>动态查看日志，tail-f tail -f /var/log/nginx/access.log; Ctrl+C结束。 </p>
 <h4 id="4-权限修改"><a href="#4-权限修改" class="headerlink" title="4. 权限修改"></a>4. 权限修改</h4><pre><code>chmod +x aaa.txt
 chmod 777 aaa.txt
 chmod -R 777 aaa  // 所有档案与子目录进行相同的权限变更(即以递回的方式逐个变更)
