@@ -7,11 +7,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="ubuntu系统Nginx、Docker等安装, Ding Zuke&#39;s blog">
     <meta name="description" content="主要介绍 基于ubuntu系统下的 Nginx，docker，node，jenkins安装
-1、Nginx 安装及使用// 安装
+1、Nginx 安装及使用1.1 安装配置（ubuntu）// 安装
 sudo apt update
 sudo apt install nginx
-nginx -v
-// 相关命令">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -326,7 +325,7 @@ nginx -v
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>主要介绍 基于ubuntu系统下的 Nginx，docker，node，jenkins安装</p>
-<h3 id="1、Nginx-安装及使用"><a href="#1、Nginx-安装及使用" class="headerlink" title="1、Nginx 安装及使用"></a>1、Nginx 安装及使用</h3><pre class=" language-bash"><code class="language-bash">// 安装
+<h3 id="1、Nginx-安装及使用"><a href="#1、Nginx-安装及使用" class="headerlink" title="1、Nginx 安装及使用"></a>1、Nginx 安装及使用</h3><h6 id="1-1-安装配置（ubuntu）"><a href="#1-1-安装配置（ubuntu）" class="headerlink" title="1.1 安装配置（ubuntu）"></a>1.1 安装配置（ubuntu）</h6><pre class=" language-bash"><code class="language-bash">// 安装
 <span class="token function">sudo</span> apt update
 <span class="token function">sudo</span> apt <span class="token function">install</span> nginx
 nginx -v
@@ -393,6 +392,20 @@ http <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 
 </code></pre>
+<h6 id="1-2-负载均衡配置"><a href="#1-2-负载均衡配置" class="headerlink" title="1.2 负载均衡配置"></a>1.2 负载均衡配置</h6><ol>
+<li>在http节点下，添加upstream节点。<pre><code>upstream s-server1{
+ip_hash；
+server 10.0.6.108:7080 weight=5;
+server 10.0.0.85:8980;
+}
+</code></pre></li>
+<li>将server节点下的location节点中的proxy_pass配置为：http:// + upstream名称，即“<a href="http://s-server1”" target="_blank" rel="noopener">http://s-server1”</a><pre><code>location / {
+root html;
+index index.html index.htm;
+proxy_pass http://s-server1;
+}
+</code></pre>weight（权重）： 越大 访问几率越大。<br>ip_hash（访问ip）： 每个ip固定访问一个服务器，解决seesion问题。注：一旦涉及到负载均衡啊、集群等问题，最好最好是不用session，一定要用的话，必须在应用服务器这一级来做复制。</li>
+</ol>
 <h3 id="2、docker-安装"><a href="#2、docker-安装" class="headerlink" title="2、docker 安装"></a>2、docker 安装</h3><ol>
 <li><p>安装 Docker </p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
