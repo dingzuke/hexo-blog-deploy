@@ -7,10 +7,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="ubuntu系统Nginx、Docker等安装, Ding Zuke&#39;s blog">
     <meta name="description" content="主要介绍 基于ubuntu系统下的 Nginx，docker，node，jenkins安装
-1、Nginx 安装及使用1.1 安装配置（ubuntu）// 安装
+1、Nginx 安装及使用1.1 安装配置// 安装
 sudo apt update
 sudo apt install nginx
-">
+nginx -v">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -325,7 +325,7 @@ sudo apt install nginx
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>主要介绍 基于ubuntu系统下的 Nginx，docker，node，jenkins安装</p>
-<h3 id="1、Nginx-安装及使用"><a href="#1、Nginx-安装及使用" class="headerlink" title="1、Nginx 安装及使用"></a>1、Nginx 安装及使用</h3><h6 id="1-1-安装配置（ubuntu）"><a href="#1-1-安装配置（ubuntu）" class="headerlink" title="1.1 安装配置（ubuntu）"></a>1.1 安装配置（ubuntu）</h6><pre class=" language-bash"><code class="language-bash">// 安装
+<h3 id="1、Nginx-安装及使用"><a href="#1、Nginx-安装及使用" class="headerlink" title="1、Nginx 安装及使用"></a>1、Nginx 安装及使用</h3><h5 id="1-1-安装配置"><a href="#1-1-安装配置" class="headerlink" title="1.1 安装配置"></a>1.1 安装配置</h5><pre class=" language-bash"><code class="language-bash">// 安装
 <span class="token function">sudo</span> apt update
 <span class="token function">sudo</span> apt <span class="token function">install</span> nginx
 nginx -v
@@ -392,7 +392,7 @@ http <span class="token punctuation">{</span>
 <span class="token punctuation">}</span>
 
 </code></pre>
-<h6 id="1-2-负载均衡配置"><a href="#1-2-负载均衡配置" class="headerlink" title="1.2 负载均衡配置"></a>1.2 负载均衡配置</h6><ol>
+<h5 id="1-2-负载均衡配置"><a href="#1-2-负载均衡配置" class="headerlink" title="1.2 负载均衡配置"></a>1.2 负载均衡配置</h5><ol>
 <li>在http节点下，添加upstream节点。<pre><code>upstream s-server1{
 ip_hash；
 server 10.0.6.108:7080 weight=5;
