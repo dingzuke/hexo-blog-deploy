@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content=" docker常用操作和配置, Ding Zuke&#39;s blog">
-    <meta name="description" content="docker相关安装见 http://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html  本文主要介绍我日常开发中用到的命令和相关配置。
-1、镜像// 查看所有镜像">
+    <meta name="keywords" content="JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent(), Ding Zuke&#39;s blog">
+    <meta name="description" content="1、东西比较基础，只是做个总结说明
+1.encodeURI()，和encodeURIComponent()是对字符-进行编码。2.decodeURI()，和decodeURIComponent()是对相应编码过的字符-进行解码。
+
+使用场景">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title> docker常用操作和配置 | Ding Zuke&#39;s blog</title>
+    <title>JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent() | Ding Zuke&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -253,13 +255,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                         docker常用操作和配置
+                        JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()
                     </div>
                 </div>
             </div>
@@ -279,8 +281,8 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/docker/" target="_blank">
-                    <span class="chip bg-color">docker</span>
+                <a href="/tags/js/" target="_blank">
+                    <span class="chip bg-color">js</span>
                 </a>
                 
             </div>
@@ -290,138 +292,39 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/docker/" class="post-category" target="_blank">
-                        docker
+                    <a href="/categories/encodeURI/" class="post-category" target="_blank">
+                        encodeURI
+                    </a>
+                    
+                    <a href="/categories/encodeURI/encodeURIComponent/" class="post-category" target="_blank">
+                        encodeURIComponent
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2021-08-31
+                    <i class="fa fa-clock-o fa-fw"></i>2021-09-28
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>docker相关安装见 <a href="http://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html">http://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html</a>  本文主要介绍我日常开发中用到的命令和相关配置。</p>
-<h5 id="1、镜像"><a href="#1、镜像" class="headerlink" title="1、镜像"></a>1、镜像</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 查看所有镜像</span>
-docker images 
-
-<span class="token comment" spellcheck="true">// 删除镜像(前提是该镜像没在容器中运行，否则需要删除运行的容器)</span>
-docker rmi 镜像名<span class="token punctuation">:</span>tag 或 id
-</code></pre>
-<h5 id="2、容器"><a href="#2、容器" class="headerlink" title="2、容器"></a>2、容器</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 列出运行容器</span>
-docker ps
-
-<span class="token comment" spellcheck="true">// 查看所有容器，包括关闭的</span>
-docker ps <span class="token operator">-</span>a
-
-<span class="token comment" spellcheck="true">// 进入docker容器</span>
-sudo docker exec <span class="token operator">-</span>it 665b4a1e17b6  <span class="token operator">/</span>bin<span class="token operator">/</span>bash    #by ID
-
-<span class="token comment" spellcheck="true">// 停止运行的容器</span>
-docker stop 容器id 
-
-<span class="token comment" spellcheck="true">// 删除容器（需要停止容器）</span>
-docker rm 容器id
-
-</code></pre>
-<h5 id="3、docker-登录"><a href="#3、docker-登录" class="headerlink" title="3、docker 登录"></a>3、docker 登录</h5><pre><code>docker login
-</code></pre><h5 id="4、本地创建镜像"><a href="#4、本地创建镜像" class="headerlink" title="4、本地创建镜像"></a>4、本地创建镜像</h5><pre class=" language-bash"><code class="language-bash">// 创建一个 test_fe ，tag为v1.0的镜像 注意加上 <span class="token keyword">.</span>
-docker build -t test_fe:v1.0 <span class="token keyword">.</span>
-
-docker tag test_fe:v1.0 路径/test_fe:v1.0
-// 提交上传
-docker push 路径/test_fe:v1.0
-</code></pre>
-<p>注意：后面要加<code>.</code>表示当前目录下的Dockerfile 构建。<br>以下是我在前端构建时Dockerfile的文件，参考：</p>
-<pre><code># Base images 基础镜像
-FROM alpine:3.9
-
-#MAINTAINER 维护者信息
-LABEL maintainer=&quot;dzk&quot;
-
-# 设置镜像仓库地址
-RUN  echo http://mirrors.aliyun.com/alpine/v3.9/main &gt; /etc/apk/repositories; \
-     echo http://mirrors.aliyun.com/alpine/v3.9/community &gt;&gt; /etc/apk/repositories
-
-RUN apk --update --no-cache add nginx &amp;&amp; mkdir /run/nginx/ &amp;&amp; mkdir -p /var/www/html \
-    &amp;&amp; rm -rf /var/cache/apk/* \
-    &amp;&amp; rm -rf /root/.cache \
-    &amp;&amp; rm -rf /tmp/*
-
-#COPY 需要准备Nginx的配置nginx.conf
-COPY ./dist/ /var/www/html
-COPY ./nginx.conf /etc/nginx
-
-#EXPOSE 映射端口
-EXPOSE 80
-
-#CMD 运行以下命令
-CMD [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
-
-</code></pre><h5 id="5、docker-镜像导入导出"><a href="#5、docker-镜像导入导出" class="headerlink" title="5、docker 镜像导入导出"></a>5、docker 镜像导入导出</h5><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 本地打包镜像：</span>
-docker save -o xxx.tar  镜像名1:Tag版本   镜像名2:Tag版本 
-
-<span class="token comment" spellcheck="true">#本地导入镜像： </span>
-docker load -i xxx.tar
-</code></pre>
-<h5 id="6、下载运行镜像"><a href="#6、下载运行镜像" class="headerlink" title="6、下载运行镜像"></a>6、下载运行镜像</h5><p>示例：</p>
-<pre><code>// 下载镜像： portainer
-docker pull portainer/portainer
-
-// 启动：portainer
-docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer  portainer/portainer
-</code></pre><h5 id="7、拷贝容器内容出来修改、将修改的导入到镜像"><a href="#7、拷贝容器内容出来修改、将修改的导入到镜像" class="headerlink" title="7、拷贝容器内容出来修改、将修改的导入到镜像"></a>7、拷贝容器内容出来修改、将修改的导入到镜像</h5><pre class=" language-bash"><code class="language-bash">// 修改device容器中的/srv/server/test.py
-docker <span class="token function">cp</span> device:/srv/server/test.py <span class="token keyword">.</span>
-
-docker <span class="token function">cp</span> device:/srv/server/test.py
-
-docker commit 容器名 镜像:tag
-docker-compose down 后重启
-docker-compose up -d
-</code></pre>
-<h5 id="8、docker-compose"><a href="#8、docker-compose" class="headerlink" title="8、docker-compose"></a>8、docker-compose</h5><pre><code>// 拉取构建  
-docker-compose up -d
-// 停止 
-docker-compose down
-</code></pre><p>docker-compose.yml文件基本配置，mysql、前端、phpadmin 为例：</p>
-<pre class=" language-bash"><code class="language-bash">version: <span class="token string">"3"</span>
-
-services:
-  mysql:
-    image: mysql:5.6.45
-    container_name: mysql
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: xxx
-    volumes:
-      - /data/mysql:/var/lib/mysql
-      - ./sql/:/docker-entrypoint-initdb.d/
-    restart: always
-
-  protal:
-    image: registry.xxx.com/xxx/test_fe:prod
-    container_name: protal
-    ports:
-      - 8000:80
-    restart: always
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
-    environment:
-      - PMA_HOST<span class="token operator">=</span>mysql
-      - PMA_PORT<span class="token operator">=</span>3306
-    ports:
-      - 10000:80
-    depends_on:
-      - mysql
-</code></pre>
+                <h6 id="1、东西比较基础，只是做个总结说明"><a href="#1、东西比较基础，只是做个总结说明" class="headerlink" title="1、东西比较基础，只是做个总结说明"></a>1、东西比较基础，只是做个总结说明</h6><blockquote>
+<p>1.encodeURI()，和encodeURIComponent()是对字符-进行编码。<br>2.decodeURI()，和decodeURIComponent()是对相应编码过的字符-进行解码。</p>
+</blockquote>
+<p>使用场景，比如需要跳转到一个页面： <code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=搜索</code><br>如果直接使用这样跳转，很难解析出id=21的参数是 <code>www.baidu.com</code>的参数还是，url参数里面的地址参数。</p>
+<blockquote>
+<p>3、encodeURIComponent() 对地址参数进行转码 </p>
+</blockquote>
+<p><code>&#39;http://www.baidu.com/do?url=&#39;+encodeURIComponent (&quot;http://xxx.com?name=test&quot;)+&#39;&amp;id=21&amp;key=搜索&#39;</code></p>
+<p>结果：’<a href="http://www.baidu.com/do?url=http%3A%2F%2Fxxx.com%3Fname%3Dtest&amp;id=21&amp;key=搜索&#39;" target="_blank" rel="noopener">http://www.baidu.com/do?url=http%3A%2F%2Fxxx.com%3Fname%3Dtest&amp;id=21&amp;key=搜索&#39;</a></p>
+<blockquote>
+<p>4、encodeURI() : 对全角日韩汉字其作用。对URL中的特殊字符不做处。</p>
+</blockquote>
+<p>例如：encodeURI(<code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=搜索</code>)</p>
+<p>结果：<code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=%E6%90%9C%E7%B4%A2</code></p>
 
             </div>
             <hr/>
@@ -560,7 +463,7 @@ services:
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/docker-chang-yong-ming-ling-cao-zuo.html" class="b-link-green"> docker常用操作和配置</a>
+                    <a href="/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html" class="b-link-green">JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()</a>
                 </p>
             </div>
         </div>
@@ -582,7 +485,7 @@ services:
         repo: 'hexo-blog-deploy',
         owner: 'dingzuke',
         admin: "dingzuke",
-        id: '2021-08-31T17-08-00',
+        id: '2021-09-28T14-23-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -603,8 +506,8 @@ services:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html">
                     <div class="card-image">
@@ -621,9 +524,9 @@ services:
 
 使用场景</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -640,6 +543,7 @@ services:
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -656,20 +560,18 @@ services:
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/linux-chang-yong-ming-ling.html">
+                <a href="/docker-chang-yong-ming-ling-cao-zuo.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="linux常用命令">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt=" docker常用操作和配置">
                         
-                        <span class="card-title">linux常用命令</span>
+                        <span class="card-title"> docker常用操作和配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">基本命令1.目录查看 ls [-al]命令：ls [-al]
-ls                查看当前目录下的所有目录和文件
-ls -a            查看当前目录下的所有目录和文件（包括隐藏的文件）
-ls -l 或 ll   </div>
+                    <div class="summary">docker相关安装见 http://www.ding51.cn/liunx-chang-jian-zhi-ling-nginx-docker-deng.html  本文主要介绍我日常开发中用到的命令和相关配置。
+1、镜像// 查看所有镜像</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2021-08-31
@@ -678,8 +580,8 @@ ls -l 或 ll   </div>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/linux/" class="post-category" target="_blank">
-                                    linux
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
                                 </a>
                             
                             
@@ -689,8 +591,8 @@ ls -l 或 ll   </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/linux命令/" target="_blank">
-                        <span class="chip bg-color">linux命令</span>
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>

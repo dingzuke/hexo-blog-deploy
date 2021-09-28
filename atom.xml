@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2021-09-02T01:48:04.321Z</updated>
+  <updated>2021-09-28T06:52:26.971Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()</title>
+    <link href="https://www.ding51.cn/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html"/>
+    <id>https://www.ding51.cn/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html</id>
+    <published>2021-09-28T06:23:00.000Z</published>
+    <updated>2021-09-28T06:52:26.971Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;1、东西比较基础，只是做个总结说明&quot;&gt;&lt;a href=&quot;#1、东西比较基础，只是做个总结说明&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="encodeURI" scheme="https://www.ding51.cn/categories/encodeURI/"/>
+    
+      <category term="encodeURIComponent" scheme="https://www.ding51.cn/categories/encodeURI/encodeURIComponent/"/>
+    
+    
+      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title> docker常用操作和配置</title>
@@ -530,34 +558,6 @@
       <category term="防抖" scheme="https://www.ding51.cn/tags/%E9%98%B2%E6%8A%96/"/>
     
       <category term="节流" scheme="https://www.ding51.cn/tags/%E8%8A%82%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小程序web-view中使用JSSDK,ios安卓踩坑</title>
-    <link href="https://www.ding51.cn/web-view-react-zhong-jssdk.html"/>
-    <id>https://www.ding51.cn/web-view-react-zhong-jssdk.html</id>
-    <published>2019-12-17T10:41:00.000Z</published>
-    <updated>2020-05-22T09:00:23.406Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h6 id=&quot;背景-在小程序中使用web-view使用react-需要调用相关JSSDK的接口配置-IOS能正常使用-安卓却签名错误invalid-signature&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://www.ding51.cn/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="JSSDK" scheme="https://www.ding51.cn/tags/JSSDK/"/>
-    
-      <category term="小程序" scheme="https://www.ding51.cn/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   

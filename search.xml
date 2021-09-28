@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()</title>
+      <link href="/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html"/>
+      <url>/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html</url>
+      
+        <content type="html"><![CDATA[<h6 id="1、东西比较基础，只是做个总结说明"><a href="#1、东西比较基础，只是做个总结说明" class="headerlink" title="1、东西比较基础，只是做个总结说明"></a>1、东西比较基础，只是做个总结说明</h6><blockquote><p>1.encodeURI()，和encodeURIComponent()是对字符-进行编码。<br>2.decodeURI()，和decodeURIComponent()是对相应编码过的字符-进行解码。</p></blockquote><p>使用场景，比如需要跳转到一个页面： <code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=搜索</code><br>如果直接使用这样跳转，很难解析出id=21的参数是 <code>www.baidu.com</code>的参数还是，url参数里面的地址参数。</p><blockquote><p>3、encodeURIComponent() 对地址参数进行转码 </p></blockquote><p><code>&#39;http://www.baidu.com/do?url=&#39;+encodeURIComponent (&quot;http://xxx.com?name=test&quot;)+&#39;&amp;id=21&amp;key=搜索&#39;</code></p><p>结果：’<a href="http://www.baidu.com/do?url=http%3A%2F%2Fxxx.com%3Fname%3Dtest&amp;id=21&amp;key=搜索&#39;" target="_blank" rel="noopener">http://www.baidu.com/do?url=http%3A%2F%2Fxxx.com%3Fname%3Dtest&amp;id=21&amp;key=搜索&#39;</a></p><blockquote><p>4、encodeURI() : 对全角日韩汉字其作用。对URL中的特殊字符不做处。</p></blockquote><p>例如：encodeURI(<code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=搜索</code>)</p><p>结果：<code>http://www.baidu.com/do?url=http://xxx.com?name=test&amp;id=21&amp;key=%E6%90%9C%E7%B4%A2</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> encodeURI </category>
+          
+          <category> encodeURIComponent </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title> docker常用操作和配置</title>
       <link href="/docker-chang-yong-ming-ling-cao-zuo.html"/>
       <url>/docker-chang-yong-ming-ling-cao-zuo.html</url>
