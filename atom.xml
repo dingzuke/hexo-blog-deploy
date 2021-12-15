@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ding51.cn/"/>
-  <updated>2021-09-28T06:52:26.971Z</updated>
+  <updated>2021-12-15T09:20:19.770Z</updated>
   <id>https://www.ding51.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原型、原型链、Function、prototype、constructor</title>
+    <link href="https://www.ding51.cn/yuan-xing-yuan-xing-lian-function-prototype-constructor.html"/>
+    <id>https://www.ding51.cn/yuan-xing-yuan-xing-lian-function-prototype-constructor.html</id>
+    <published>2021-12-09T09:49:00.000Z</published>
+    <updated>2021-12-15T09:20:19.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1、函数和对象&quot;&gt;&lt;a href=&quot;#1、函数和对象&quot; class=&quot;headerlink&quot; title=&quot;1、函数和对象&quot;&gt;&lt;/a&gt;1、函数和对象&lt;/h4&gt;&lt;p&gt;基本概念：&lt;br&gt;1、函数（function）&lt;br&gt;2、函数对象(function
+        
+      
+    
+    </summary>
+    
+      <category term="原型链" scheme="https://www.ding51.cn/categories/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    
+    
+      <category term="原型" scheme="https://www.ding51.cn/tags/%E5%8E%9F%E5%9E%8B/"/>
+    
+      <category term="原型链" scheme="https://www.ding51.cn/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    
+      <category term="__proto__" scheme="https://www.ding51.cn/tags/proto/"/>
+    
+      <category term="prototype" scheme="https://www.ding51.cn/tags/prototype/"/>
+    
+      <category term="constructor" scheme="https://www.ding51.cn/tags/constructor/"/>
+    
+  </entry>
   
   <entry>
     <title>JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()</title>
@@ -528,36 +562,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>节流和防抖</title>
-    <link href="https://www.ding51.cn/jie-liu-he-fang-dou.html"/>
-    <id>https://www.ding51.cn/jie-liu-he-fang-dou.html</id>
-    <published>2019-12-18T07:51:00.000Z</published>
-    <updated>2020-05-22T09:00:23.406Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h5 id=&quot;函数防抖-debounce&quot;&gt;&lt;a href=&quot;#函数防抖-debounce&quot; class=&quot;headerlink&quot; title=&quot;函数防抖(debounce)&quot;&gt;&lt;/a&gt;函数防抖(debounce)&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;含义:&lt;/strong&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="js" scheme="https://www.ding51.cn/categories/js/"/>
-    
-    
-      <category term="js" scheme="https://www.ding51.cn/tags/js/"/>
-    
-      <category term="防抖" scheme="https://www.ding51.cn/tags/%E9%98%B2%E6%8A%96/"/>
-    
-      <category term="节流" scheme="https://www.ding51.cn/tags/%E8%8A%82%E6%B5%81/"/>
     
   </entry>
   

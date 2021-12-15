@@ -1,3 +1,4 @@
+https://www.ding51.cn/yuan-xing-yuan-xing-lian-function-prototype-constructor.html
 https://www.ding51.cn/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html
 https://www.ding51.cn/docker-chang-yong-ming-ling-cao-zuo.html
 https://www.ding51.cn/linux-chang-yong-ming-ling.html
@@ -7,4 +8,3 @@ https://www.ding51.cn/object-assign-shi-shen-kao-bei-huan-shi-qian-kao-bei.html
 https://www.ding51.cn/bfc.html
 https://www.ding51.cn/js-liu-lan-qi-quan-ping-mo-shi.html
 https://www.ding51.cn/die-dai-qi-iterator-he-sheng-cheng-qi-generator.html
-https://www.ding51.cn/javascript-chang-yong-she-ji-mo-shi.html

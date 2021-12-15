@@ -1,0 +1,829 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="原型、原型链、Function、prototype、constructor, Ding Zuke&#39;s blog">
+    <meta name="description" content="1、函数和对象基本概念：1、函数（function）2、函数对象(function object)3、本地对象(native object)4、内置对象(build-in object)5、宿主对象(host object)
+1.1、函数/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>原型、原型链、Function、prototype、constructor | Ding Zuke&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Ding Zuke's blog</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ding Zuke's blog</div>
+        <div class="logo-desc">
+            
+            一个web开发者的爬坑路
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/dingzuke/hexo-blog-template" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/dingzuke" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:dingzuke2012@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 675129745" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #000000;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/dingzuke/hexo-blog-template" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        原型、原型链、Function、prototype、constructor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/原型/" target="_blank">
+                    <span class="chip bg-color">原型</span>
+                </a>
+                
+                <a href="/tags/原型链/" target="_blank">
+                    <span class="chip bg-color">原型链</span>
+                </a>
+                
+                <a href="/tags/proto/" target="_blank">
+                    <span class="chip bg-color">__proto__</span>
+                </a>
+                
+                <a href="/tags/prototype/" target="_blank">
+                    <span class="chip bg-color">prototype</span>
+                </a>
+                
+                <a href="/tags/constructor/" target="_blank">
+                    <span class="chip bg-color">constructor</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/原型链/" class="post-category" target="_blank">
+                        原型链
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2021-12-09
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="1、函数和对象"><a href="#1、函数和对象" class="headerlink" title="1、函数和对象"></a>1、函数和对象</h4><p>基本概念：<br>1、函数（function）<br>2、函数对象(function object)<br>3、本地对象(native object)<br>4、内置对象(build-in object)<br>5、宿主对象(host object)</p>
+<h5 id="1-1、函数"><a href="#1-1、函数" class="headerlink" title="1.1、函数"></a>1.1、函数</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//函数声明</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">//函数表达式</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// typeof foo  都是function。</span>
+</code></pre>
+<h5 id="1-2、函数对象"><a href="#1-2、函数对象" class="headerlink" title="1.2、函数对象"></a>1.2、函数对象</h5><p>在Javascript中,每一个函数实际上都是一个函数对象。<br>如果我们单纯的把它当成一个函数使用，那么它就是函数。<br>如果我们通过他来实例化出对象来使用，那么它就可以当成一个函数对象来使用。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> Foo <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">typeof</span> foo <span class="token comment" spellcheck="true">// object</span>
+</code></pre>
+<h5 id="1-3、本地对象"><a href="#1-3、本地对象" class="headerlink" title="1.3、本地对象"></a>1.3、本地对象</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">typeof</span><span class="token punctuation">(</span>Object<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// function</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span>Array<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// function</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span>Date<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// function</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span>RegExp<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// function</span>
+
+<span class="token comment" spellcheck="true">// Math和Json 以对象方式存在</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span>Math<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// object</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span>Json<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// object</span>
+<span class="token keyword">typeof</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// object</span>
+
+
+<span class="token comment" spellcheck="true">// 如下:</span>
+<span class="token keyword">function</span> Object（）<span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> Array（）<span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>可以看出，这些本地对象（类）是通过function建立起来的。<br>Object原本就是一个函数，通过new Object()之后实例化后，创建对象</p>
+<h5 id="1-4、内置对象"><a href="#1-4、内置对象" class="headerlink" title="1.4、内置对象"></a>1.4、内置对象</h5><p>定义“由 ECMAScript 实现提供的、独立于宿主环境的所有对象，在 ECMAScript 程序开始执行时出现”。这意味着开发者不必明确实例化内置对象，它已被实例化了。ECMA-262 只定义了两个内置对象，即 Global 和 Math （它们也是本地对象，根据定义，每个内置对象都是本地对象）。</p>
+<h4 id="2、原型"><a href="#2、原型" class="headerlink" title="2、原型"></a>2、原型</h4><h5 id="2-1-prototype-–-函数的属性"><a href="#2-1-prototype-–-函数的属性" class="headerlink" title="2.1 prototype – 函数的属性"></a>2.1 <code>prototype</code> – 函数的属性</h5><p>prototype属性是每一个<code>函数</code>都具有的属性，但是不是一个对象都具有的属性。<br>Javascript里面所有的数据类型都是对象，为了使JavaScript实现面向对象的思想，就必须要能够实现‘继承’使所有的对象连接起来。而如何实现继承呢？JavaScript采用了类似C++，java的方式，通过new的方式来实现实例。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；
+
+foo<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Foo<span class="token punctuation">.</span>prototype <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<p>其中Foo中有prototype属性，而foo没有。但是foo中的隐含的<strong>proto</strong>属性指向Foo.prototype。</p>
+<h5 id="2-2-proto-函数和对象都有的属性"><a href="#2-2-proto-函数和对象都有的属性" class="headerlink" title="2.2 __proto__ 函数和对象都有的属性"></a>2.2 <code>__proto__</code> 函数和对象都有的属性</h5><p><code>__proto__</code> 属性是每一个对象以及函数都隐含的一个属性。对于每一个含有<code>__proto__</code>属性，他所指向的是创建他的构造函数的prototype。原型链就是通过这个属性构件的</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>；
+
+foo<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Foo<span class="token punctuation">.</span>prototype <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<p>注意！！ <code>Object.prototype.__proto__</code> 指向的是null</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// instanceof 一个对象是不是另一个对象 new 出来的</span>
+Function <span class="token keyword">instanceof</span>  <span class="token class-name">Object</span>   <span class="token comment" spellcheck="true">//true    </span>
+Object <span class="token keyword">instanceof</span>  <span class="token class-name">Function</span>  <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<h5 id="2-2-constructor"><a href="#2-2-constructor" class="headerlink" title="2.2 constructor"></a>2.2 <code>constructor</code></h5><p>原型对象prototype中都有个预定义的constructor属性，用来引用<strong>它的函数</strong>对象。这是一种循环引用。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Foo<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Foo<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Foo<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Function<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+<h4 id="3、关系图"><a href="#3、关系图" class="headerlink" title="3、关系图"></a>3、关系图</h4><pre class=" language-javascript"><code class="language-javascript">Function<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__  <span class="token operator">===</span> Object<span class="token punctuation">.</span>prototype <span class="token comment" spellcheck="true">//true</span>
+
+Object<span class="token punctuation">.</span>__proto__  <span class="token operator">===</span> Function<span class="token punctuation">.</span>prototype <span class="token comment" spellcheck="true">//true Object也是Function new出来的</span>
+</code></pre>
+<p><img src="/images/pasted-45.png" alt="upload successful"></p>
+<h4 id="4、题型（参考关系图更好理解）"><a href="#4、题型（参考关系图更好理解）" class="headerlink" title="4、题型（参考关系图更好理解）"></a>4、题型（参考关系图更好理解）</h4><p><a href="http://www.ding51.cn/new-de-shi-xian-guo-cheng-es5-es6-lei-de-dui-bi.html">手写new的函数过程</a></p>
+<h5 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>getX <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getX <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getY <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> f1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fn</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> f2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Fn</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>getX <span class="token operator">===</span> f2<span class="token punctuation">.</span>getX<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//false 自身属性查找，没找到，才找原型上查找</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>getY <span class="token operator">===</span> f2<span class="token punctuation">.</span>getY<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//true</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>getY <span class="token operator">===</span> Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getY<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>getX <span class="token operator">===</span> f2<span class="token punctuation">.</span>getX<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>getX <span class="token operator">===</span> Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>getX<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f1<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//Fn   f1没有constructor 相当于 (f1.__proto__).constructor === Fn.prototype.constructor</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//Object</span>
+f1<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//100    this=>f1</span>
+f1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span><span class="token function">getX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//undefined     this=>f1.__proto__(Fn.prototype)</span>
+f2<span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//******  200    this=>f2</span>
+Fn<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">getY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//undefined    this=>f2.__proto__(Fn.prototype)</span>
+
+<span class="token comment" spellcheck="true">//输出结果： false,true,true,false,true,Fn,Object,100,undefined,200,undefined</span>
+</code></pre>
+<h5 id="例2："><a href="#例2：" class="headerlink" title="例2："></a>例2：</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+fun<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+    b<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    c<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> my_fun <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+my_fun<span class="token punctuation">.</span><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//0  私有方法     this=>my_fun</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my_fun<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0</span>
+my_fun<span class="token punctuation">.</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//30 公有方法    this=>my_fun this.a = 30（将私有属性a修改为30）</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my_fun<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 已经修改为30</span>
+<span class="token keyword">var</span> my_fun2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my_fun2<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0 my_fun2重新构造了的</span>
+my_fun2<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 30  fun.prototype this=>my_fun2.__proto__ 当前实例通过原型链在类的共有属性上增加了一个a:30</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my_fun2<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0 不变</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>my_fun2<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//30  c()给原型链赋值 30   </span>
+</code></pre>
+<h5 id="例3："><a href="#例3：" class="headerlink" title="例3："></a>例3：</h5><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> b1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+a<span class="token punctuation">.</span>prototype <span class="token operator">=</span> b1<span class="token punctuation">;</span>
+<span class="token keyword">var</span> a1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token operator">===</span>b<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token operator">===</span>b<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__ <span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//  null</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor <span class="token operator">===</span>  b<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//true  a1.__proto__等于a.prototype   上面赋值为b1。 相当于b1.constructor === b</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor <span class="token operator">===</span>b<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor <span class="token operator">===</span>  a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 会如果没找到该属性默认调用__proto__ 去查找</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Object<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true 函数原型的__proto__ 最终都指向了 Object.prototype</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a1<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Function<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true 构造函数的__proto__ 最终都指向了 Function.prototype</span>
+</code></pre>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">给多了,我拒收!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat_code.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay_code.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://www.ding51.cn" class="b-link-green">Ding Zuke's blog</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/yuan-xing-yuan-xing-lian-function-prototype-constructor.html" class="b-link-green">原型、原型链、Function、prototype、constructor</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '1314476ae87b8e5fd60c',
+        clientSecret: 'ab46678fae34a69eae2d582551d40d6692bc40e3',
+        repo: 'hexo-blog-deploy',
+        owner: 'dingzuke',
+        admin: "dingzuke",
+        id: '2021-12-09T17-49-00',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/yuan-xing-yuan-xing-lian-function-prototype-constructor.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="原型、原型链、Function、prototype、constructor">
+                        
+                        <span class="card-title">原型、原型链、Function、prototype、constructor</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1、函数和对象基本概念：1、函数（function）2、函数对象(function object)3、本地对象(native object)4、内置对象(build-in object)5、宿主对象(host object)
+1.1、函数/</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-12-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/原型链/" class="post-category" target="_blank">
+                                    原型链
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/原型/" target="_blank">
+                        <span class="chip bg-color">原型</span>
+                    </a>
+                    
+                    <a href="/tags/原型链/" target="_blank">
+                        <span class="chip bg-color">原型链</span>
+                    </a>
+                    
+                    <a href="/tags/proto/" target="_blank">
+                        <span class="chip bg-color">__proto__</span>
+                    </a>
+                    
+                    <a href="/tags/prototype/" target="_blank">
+                        <span class="chip bg-color">prototype</span>
+                    </a>
+                    
+                    <a href="/tags/constructor/" target="_blank">
+                        <span class="chip bg-color">constructor</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/js-zhong-encodeuri-decodeuri-encodeuricomponent-decodeuricomponent.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()">
+                        
+                        <span class="card-title">JS中encodeURI()、decodeURI()、encodeURIComponent()、decodeURIComponent()</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">1、东西比较基础，只是做个总结说明
+1.encodeURI()，和encodeURIComponent()是对字符-进行编码。2.decodeURI()，和decodeURIComponent()是对相应编码过的字符-进行解码。
+
+使用场景</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-09-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/encodeURI/" class="post-category" target="_blank">
+                                    encodeURI
+                                </a>
+                            
+                            <a href="/categories/encodeURI/encodeURIComponent/" class="post-category" target="_blank">
+                                    encodeURIComponent
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/js/" target="_blank">
+                        <span class="chip bg-color">js</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright &copy; 2018-2021 dingzuke
+            &nbsp;&nbsp;
+            <a href="http://beian.miit.gov.cn" target="_blank">渝ICP备18001158号</a> 
+            &nbsp;&nbsp;
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50011602500655">
+                <img src="/medias/beian.png" style="position: relative;top: 4px;"> 渝公网安备 50011602500655号
+            </a>         
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/dingzuke" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="mailto:dingzuke2012@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <i class="fa fa-envelope-open"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 675129745" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
